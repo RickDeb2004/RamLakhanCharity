@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -10,11 +10,13 @@ const NavbarWrapper = styled.nav`
 `;
 
 const NavContainer = styled.div`
-  max-width: 800px;
+  width: 1000px;
+  max-length:auto;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 20px;
 `;
 
 const NavLinks = styled.div`
@@ -31,16 +33,54 @@ const NavLinkItem = styled(NavLink)`
   }
 `;
 
+const Dropdown = styled.div`
+  position: relative;
+  display: inline-block;
+  margin-right: 20px;
+`;
+
+const DropdownContent = styled.div`
+  display: ${(props) => (props.isOpen ? 'block' : 'none')};
+  position: absolute;
+  background-color: #333;
+  min-width: 160px;
+  z-index: 1;
+  top: 100%;
+  left: 0;
+`;
+
+const DropdownItem = styled(NavLink)`
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+  &:hover {
+    background-color: #555;
+  }
+`;
+
 const Navbar = () => {
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setDropdownOpen(!isDropdownOpen);
+  };
+
   return (
     <NavbarWrapper>
       <NavContainer>
         <h1>Your Logo</h1>
         <NavLinks>
-          <NavLinkItem exact to="/">
+          <NavLinkItem exact to="/home">
             Home
           </NavLinkItem>
-          <NavLinkItem to="/about">About Us</NavLinkItem>
+          <Dropdown>
+            <span onClick={toggleDropdown}>About Us</span>
+            <DropdownContent isOpen={isDropdownOpen}>
+              <DropdownItem to="/who-are-we">Who Are We</DropdownItem>
+              <DropdownItem to="/board-of-directors">Board of Directors</DropdownItem>
+            </DropdownContent>
+          </Dropdown>
           <NavLinkItem to="/what-we-do">What We Do</NavLinkItem>
           <NavLinkItem to="/pic">Pic</NavLinkItem>
           <NavLinkItem to="/media">Media</NavLinkItem>

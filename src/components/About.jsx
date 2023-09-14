@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 import styled from 'styled-components';
-import Navbar from '../Navbar'; // Import your Navbar component here
+import Navbar from './Navbar'; // Import your Navbar component here
 
 const AboutWrapper = styled.div`
   padding: 20px; /* Adjust the padding as needed */
