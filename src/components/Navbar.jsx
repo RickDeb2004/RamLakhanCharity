@@ -59,6 +59,10 @@ const DropdownItem = styled(NavLink)`
   }
 `;
 
+const LogoImage = styled.img`
+  max-width: 100px; /* Adjust the max-width as needed */
+`;
+
 const Navbar = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
 
@@ -69,7 +73,7 @@ const Navbar = () => {
   return (
     <NavbarWrapper>
       <NavContainer>
-        <h1>Your Logo</h1>
+      <LogoImage src="src\components\images\logo (1).png" alt="Your Logo" />
         <NavLinks>
           <NavLinkItem exact to="/home">
             Home
@@ -78,10 +82,10 @@ const Navbar = () => {
             <span onClick={toggleDropdown}>About Us</span>
             <DropdownContent isOpen={isDropdownOpen}>
               <DropdownItem to="/who-are-we">Who Are We</DropdownItem>
-              <DropdownItem to="/board-of-directors">Board of Directors</DropdownItem>
+              <DropdownItem to="/board-of-directors">Board Of Directors And Members</DropdownItem>
             </DropdownContent>
           </Dropdown>
-          <NavLinkItem to="/what-we-do">What We Do</NavLinkItem>
+          <NavLinkItem to="/Mission and Vision">Mission and Vision</NavLinkItem>
           <NavLinkItem to="/pic">Pic</NavLinkItem>
           <NavLinkItem to="/media">Media</NavLinkItem>
           <NavLinkItem to="/contact">Contact</NavLinkItem>

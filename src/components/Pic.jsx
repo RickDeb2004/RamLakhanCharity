@@ -36,6 +36,11 @@ const Card = styled.div`
   text-align: center;
 `;
 
+const CardImage = styled.img`
+  max-width: 100%;
+  height: auto;
+`;
+
 const Pic = () => {
   return (
     <PicWrapper>
@@ -48,8 +53,10 @@ const Pic = () => {
       <CardContainer>
         {Array.from({ length: 25 }).map((_, index) => (
           <Card key={index}>
-            <img src={`/path-to-image-${index + 1}.jpg`} alt={`Image ${index + 1}`} /> {/* Replace with your image paths */}
+            <CardImage src={`src/components/images/gal${index}.jpeg`} alt={`Image ${index}`} />
+            
           </Card>
+          
         ))}
       </CardContainer>
     </PicWrapper>

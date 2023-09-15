@@ -37,17 +37,41 @@ const BoardOfDirectors = () => {
   const directorsData = [
     {
       id: 1,
-      name: 'Director 1',
-      imageSrc: '/path-to-image-1.jpg', // Replace with actual image path
+      name: 'ARGADEV SHARMA',
+      imageSrc: 'src/components/images/agradev.jpeg', // Replace with actual image path
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     },
     {
       id: 2,
-      name: 'Director 2',
-      imageSrc: '/path-to-image-2.jpg', // Replace with actual image path
+      name: 'UTKARSH SINGH',
+      imageSrc: 'src/components/images/utkarsh.jpeg', // Replace with actual image path
       description: 'Sed tristique urna eu libero fringilla, eget suscipit libero vehicula.',
     },
-    // Add more director data objects as needed
+    {
+      id: 3,
+      name: 'AKASH TRIPATHI',
+      imageSrc: 'src/components/images/akash.jpeg', // Replace with actual image path
+      description: 'Sed tristique urna eu libero fringilla, eget suscipit libero vehicula.',
+    },
+    {
+      id: 4,
+      name: 'NISHANT KUMAR',
+      imageSrc: 'src/components/images/nishant.jpeg', // Replace with actual image path
+      description: 'Sed tristique urna eu libero fringilla, eget suscipit libero vehicula.',
+    },
+    {
+      id: 5,
+      name: 'HIMANSHU RAI',
+      imageSrc: 'src/components/images/himanshu.jpeg', // Replace with actual image path
+      description: 'Sed tristique urna eu libero fringilla, eget suscipit libero vehicula.',
+    },
+    {
+      id: 6,
+      name: 'SIDDHARTH SINGH',
+      imageSrc: 'src/components/images/siddharth.jpeg', // Replace with actual image path
+      description: 'Sed tristique urna eu libero fringilla, eget suscipit libero vehicula.',
+    },
+    
   ];
 
   return (
