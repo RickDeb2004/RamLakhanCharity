@@ -2,6 +2,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Navbar from './Navbar'; // Import your Navbar component here
+import Footer from './Footer';
 
 const AboutWrapper = styled.div`
   padding: 20px; /* Adjust the padding as needed */
@@ -82,6 +83,7 @@ const About = () => {
           </SquareBox>
         </SquareBoxContainer>
       </ParagraphContainer>
+      <Footer/>
     </AboutWrapper>
   );
 };

@@ -2,6 +2,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Navbar from './Navbar';
+import Footer from './Footer';
 
 const ContactWrapper = styled.div`
   background-color: #f7f7f7;
@@ -94,6 +95,7 @@ const Contact = () => {
           <SubmitButton type="submit">Submit</SubmitButton>
         </ContactForm>
       </FormSection>
+        <Footer />
     </ContactWrapper>
   );
 };

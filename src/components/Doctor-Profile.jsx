@@ -3,6 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
+import Footer from './Footer';
 
 const DoctorProfileWrapper = styled.div`
   padding: 20px; 
@@ -90,6 +91,7 @@ const DoctorProfile = () => {
           </DoctorCard>
         ))}
       </DoctorCardsContainer>
+      <Footer />
     </DoctorProfileWrapper>
   );
 };

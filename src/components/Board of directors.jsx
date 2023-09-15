@@ -2,6 +2,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Navbar from './Navbar';
+import Footer from './Footer';
 
 const BoardOfDirectorsWrapper = styled.div`
   background-color: #f7f7f7;
@@ -86,6 +87,7 @@ const BoardOfDirectors = () => {
           </Card>
         ))}
       </CardContainer>
+        <Footer />
     </BoardOfDirectorsWrapper>
   );
 };

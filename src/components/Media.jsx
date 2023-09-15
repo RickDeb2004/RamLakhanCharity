@@ -2,6 +2,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Navbar from './Navbar'; // Import your Navbar component here
+import Footer from './Footer';
 
 const MediaWrapper = styled.div`
   padding: 20px; /* Adjust the padding as needed */
@@ -72,6 +73,7 @@ const Media = () => {
         </MediaCard>
        
       </MediaContainer>
+      <Footer />
     </MediaWrapper>
   );
 };

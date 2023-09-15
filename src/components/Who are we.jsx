@@ -2,6 +2,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Navbar from './Navbar';
+import Footer from './Footer';
 
 const WhoAreWeWrapper = styled.div`
   background-color: #f7f7f7;
@@ -37,6 +38,7 @@ const WhoAreWe = () => {
         </p>
         {/* Additional content */}
       </ContentSection>
+      <Footer/>
     </WhoAreWeWrapper>
   );
 };

@@ -1,14 +1,15 @@
 // eslint-disable-next-line no-unused-vars
-import React from 'react';
-import styled from 'styled-components';
-import Navbar from './Navbar';
+import React from "react";
+import styled from "styled-components";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 const PicWrapper = styled.div`
   background-color: #f7f7f7;
 `;
 
 const HeroSection = styled.section`
-  background-image: url('/path-to-hero-image.jpg'); /* Replace with your hero image path */
+  background-image: url("/path-to-hero-image.jpg"); /* Replace with your hero image path */
   background-size: cover;
   background-position: center;
   color: white;
@@ -45,20 +46,24 @@ const Pic = () => {
   return (
     <PicWrapper>
       <Navbar />
+
       <HeroSection>
-        <img src="/path-to-hero-image.jpg" alt="Hero" /> {/* Replace with your hero image path */}
+        <img src="/path-to-hero-image.jpg" alt="Hero" />{" "}
+        {/* Replace with your hero image path */}
         <PhotoGalleryHeading>Photo Gallery</PhotoGalleryHeading>
       </HeroSection>
 
       <CardContainer>
         {Array.from({ length: 25 }).map((_, index) => (
           <Card key={index}>
-            <CardImage src={`src/components/images/gal${index}.jpeg`} alt={`Image ${index}`} />
-            
+            <CardImage
+              src={`src/components/images/gal${index}.jpeg`}
+              alt={`Image ${index}`}
+            />
           </Card>
-          
         ))}
       </CardContainer>
+      <Footer />
     </PicWrapper>
   );
 };

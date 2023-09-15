@@ -4,6 +4,7 @@ import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import styled from 'styled-components';
 import Navbar from './Navbar';
+import Footer from './Footer';
 
 const HomeContainer = styled.div`
   display: flex;
@@ -66,6 +67,7 @@ const Home = () => {
           nunc odio et ex.
         </p>
       </ContentSection>
+      <Footer />
     </HomeContainer>
   );
 };
