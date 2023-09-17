@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 const NavbarWrapper = styled.nav`
   background-color: #333;
@@ -22,6 +24,17 @@ const NavContainer = styled.div`
 const NavLinks = styled.div`
   display: flex;
   gap: 20px;
+
+  @media (max-width: 768px) {
+    display: ${(props) => (props.isOpen ? 'flex' : 'none')};
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #333;
+    padding: 10px;
+    width: 100%;
+  }
 `;
 
 const NavLinkItem = styled(NavLink)`
@@ -63,18 +76,39 @@ const LogoImage = styled.img`
   max-width: 100px; /* Adjust the max-width as needed */
 `;
 
+const HamBarIcon = styled.div`
+  display: none;
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+`;
+
+
+
 const Navbar = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+
 
   const toggleDropdown = () => {
     setDropdownOpen(!isDropdownOpen);
   };
 
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+
   return (
     <NavbarWrapper>
       <NavContainer>
+      <HamBarIcon onClick={toggleMobileMenu}>
+          <FontAwesomeIcon icon={faBars} />
+        </HamBarIcon>
       <LogoImage src="src\components\images\logo (1).png" alt="Your Logo" />
-        <NavLinks>
+        <NavLinks isOpen={isMobileMenuOpen}>
           <NavLinkItem exact to="/home">
             Home
           </NavLinkItem>
@@ -85,8 +119,8 @@ const Navbar = () => {
               <DropdownItem to="/board-of-directors">Board Of Directors And Members</DropdownItem>
             </DropdownContent>
           </Dropdown>
-          <NavLinkItem to="/Mission and Vision">Mission and Vision</NavLinkItem>
-          <NavLinkItem to="/pic">Pic</NavLinkItem>
+          <NavLinkItem to="/mission-vision">Mission and Vision</NavLinkItem>
+          <NavLinkItem to="/pic">Gallery</NavLinkItem>
           <NavLinkItem to="/media">Media</NavLinkItem>
           <NavLinkItem to="/contact">Contact</NavLinkItem>
           <NavLinkItem to="/doctor-profile">Doctors-profile</NavLinkItem>

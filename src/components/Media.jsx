@@ -9,7 +9,7 @@ const MediaWrapper = styled.div`
 `;
 
 const HeroSection = styled.section`
-  background-image: url('/path-to-hero-image.jpg'); /* Replace with your hero image */
+  background-image: url('src/components/images/utkarsh.jpeg'); /* Replace with your hero image */
   background-size: cover;
   background-position: center;
   color: white;
@@ -36,9 +36,10 @@ const MediaCard = styled.div`
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
 `;
 
-const MediaImage = styled.img`
+const MediaVideo = styled.video`
   max-width: 100%;
   height: auto;
 `;
@@ -60,18 +61,26 @@ const Media = () => {
 
       <MediaContainer>
         <MediaCard>
-          <MediaImage src="/path-to-media-image-1.jpg" alt="Media 1" />
+          <MediaVideo controls>
+            <source src="/path-to-media-video-1.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </MediaVideo>
           <Description>Description 1</Description>
         </MediaCard>
         <MediaCard>
-          <MediaImage src="/path-to-media-image-2.jpg" alt="Media 2" />
+          <MediaVideo controls>
+            <source src="/path-to-media-video-2.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </MediaVideo>
           <Description>Description 2</Description>
         </MediaCard>
         <MediaCard>
-          <MediaImage src="/path-to-media-image-3.jpg" alt="Media 3" />
+          <MediaVideo controls>
+            <source src="/path-to-media-video-3.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </MediaVideo>
           <Description>Description 3</Description>
         </MediaCard>
-       
       </MediaContainer>
       <Footer />
     </MediaWrapper>

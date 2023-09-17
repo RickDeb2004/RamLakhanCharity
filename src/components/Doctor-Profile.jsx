@@ -59,14 +59,14 @@ const DoctorProfile = () => {
   const doctors = [
     {
       id: 1,
-      name: 'Dr. John Doe',
-      image: '/path-to-doctor-image-1.jpg',
+      name: 'Dr. Jone Doe',
+      image: 'src/components/images/himanshu.jpeg',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     },
     {
       id: 2,
       name: 'Dr. Jane Smith',
-      image: '/path-to-doctor-image-2.jpg',
+      image: 'src/components/images/himanshu.jpeg',
       description: 'Sed tristique urna eu libero fringilla, eget suscipit libero vehicula.',
     },
    

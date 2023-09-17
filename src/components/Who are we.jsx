@@ -9,14 +9,20 @@ const WhoAreWeWrapper = styled.div`
 `;
 
 const HeroSection = styled.section`
-  background-image: url('/path-to-hero-image.jpg'); /* Replace with your hero image path */
+  background-image: url(''); /* Replace with your hero image path */
   background-size: cover;
   background-position: center;
   color: white;
   text-align: center;
   padding: 100px 0; /* Adjust the padding as needed */
+  
 `;
-
+const HeroImage = styled.img`
+  max-width: 400px; /* Ensure the image doesn't exceed its container */
+  height: 400px; /* Maintain the aspect ratio */
+  display: block; /* Remove any extra spacing */
+  margin: 0 auto; /* Center the image horizontally */
+`;
 const ContentSection = styled.section`
   padding: 50px 0; /* Adjust the padding as needed */
   text-align: center;
@@ -27,7 +33,7 @@ const WhoAreWe = () => {
     <WhoAreWeWrapper>
       <Navbar />
       <HeroSection>
-        <img src="/path-to-hero-image.jpg" alt="Hero" /> {/* Replace with your hero image path */}
+        <HeroImage /> {/* Replace with your hero image path */}
       </HeroSection>
 
       <ContentSection>

@@ -9,7 +9,7 @@ const ContactWrapper = styled.div`
 `;
 
 const HeroSection = styled.section`
-  background-image: url('/path-to-your-background-image.jpg'); /* Replace with your background image path */
+  background-image: url('src/components/images/utkarsh.jpeg'); /* Replace with your background image path */
   background-size: cover;
   background-position: center;
   color: grey;

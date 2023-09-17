@@ -10,6 +10,7 @@ import Contact from "./components/Contact";
 import Pic from "./components/Pic";
 import WhoAreWe from "./components/Who are we";
 import BoardOfDirectors from "./components/Board of directors";
+import MissionAndVision from "./components/Mission -Vision";
 const App = () => {
   return (
     <Router>
@@ -24,7 +25,8 @@ const App = () => {
         <Route path="/pic" element={<Pic />} />
         <Route path="/who-are-we" element={<WhoAreWe />} />
         <Route path="/board-of-directors" element={<BoardOfDirectors />} />
-        
+        <Route path="/mission-vision" element={<MissionAndVision />} />
+
 
       </Routes>
     </Router>

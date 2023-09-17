@@ -30,27 +30,34 @@ const ContentSection = styled.section`
   text-align: center;
 `;
 
+const CarouselImage = styled.img`
+  max-width: 400px;
+  max-height: 400px;
+  object-fit: cover; /* Maintain aspect ratio and cover container */
+`;
+
+
 const Home = () => {
   return (
     <HomeContainer>
       <Navbar />
       <HeroSection>
         <CarouselContainer>
-          <Carousel infiniteLoop autoPlay showStatus={false} showThumbs={false}>
+          <Carousel infiniteLoop autoPlay showStatus={false} showThumbs={false}  interval={2000}>
           <div>
-              <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fpixels.com%2Ffeatured%2Fdoremon-deepak-pengoria.html&psig=AOvVaw3rBl-zFWwutx6p078PO5Bo&ust=1694710548398000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCPiLv_WGqIEDFQAAAAAdAAAAABAE" alt="Image 1" />
+              <CarouselImage src="src\components\images\logo (1).png" alt="Image 1" />
             </div>
             <div>
-              <img src="C:\Users\dell\Downloads\WhatsApp Image 2023-08-31 at 14.55.46.jpeg" alt="Image 2" />
+              <CarouselImage src="src\components\images\himanshu.jpeg" alt="Image 2" />
             </div>
             <div>
-              <img src="C:\Users\dell\Downloads\WhatsApp Image 2023-08-31 at 15.05.22.jpeg" alt="Image 3" />
+              <CarouselImage src="src\components\images\chairman.jpeg" alt="Image 3" />
             </div>
             <div>
-              <img src="C:\cyborg\gsoc\register2.png" alt="Image 4" />
+              <CarouselImage src="src\components\images\agradev.jpeg" alt="Image 4" />
             </div>
             <div>
-              <img src="C:\Users\dell\Downloads\WhatsApp Image 2023-08-31 at 14.55.46.jpeg" alt="Image 5" />
+              <CarouselImage src="src\components\images\nishant.jpeg" alt="Image 5" />
             </div>
           </Carousel>
         </CarouselContainer>
