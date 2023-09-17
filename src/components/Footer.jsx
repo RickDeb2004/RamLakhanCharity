@@ -1,6 +1,8 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 import styled from 'styled-components';
+import { FaFacebook,  FaInstagram,  } from 'react-icons/fa';
+
 
 const FooterWrapper = styled.footer`
   background-color: #333;
@@ -84,10 +86,10 @@ const Footer = () => {
         </ContactUs>
         <SocialMedia>
           <FooterHeading>Follow Us</FooterHeading>
-          <SocialMediaLink href="#" className="fab fa-facebook"></SocialMediaLink>
-          <SocialMediaLink href="#" className="fab fa-twitter"></SocialMediaLink>
-          <SocialMediaLink href="#" className="fab fa-instagram"></SocialMediaLink>
-          <SocialMediaLink href="#" className="fab fa-linkedin"></SocialMediaLink>
+          <SocialMediaLink href="https://www.facebook.com/profile.php?id=100076468233609&mibextid=LQQJ4d"><FaFacebook/></SocialMediaLink>
+          
+          <SocialMediaLink href="https://instagram.com/ramlakhan_trust?igshid=MzRlODBiNWFlZA=="><FaInstagram/></SocialMediaLink>
+          
         </SocialMedia>
       </FooterContainer>
     </FooterWrapper>
