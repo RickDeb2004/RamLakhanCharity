@@ -119,7 +119,7 @@ const Navbar = () => {
               <DropdownItem to="/board-of-directors">Board Of Directors And Members</DropdownItem>
             </DropdownContent>
           </Dropdown>
-          <NavLinkItem to="/mission-vision">Mission and Vision</NavLinkItem>
+          <NavLinkItem to="/in-highlights">In-Highlights</NavLinkItem>
           <NavLinkItem to="/pic">Gallery</NavLinkItem>
           <NavLinkItem to="/media">Media</NavLinkItem>
           <NavLinkItem to="/contact">Contact</NavLinkItem>

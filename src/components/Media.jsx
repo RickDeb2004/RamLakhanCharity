@@ -9,7 +9,7 @@ const MediaWrapper = styled.div`
 `;
 
 const HeroSection = styled.section`
-  background-image: url('src/components/images/utkarsh.jpeg'); /* Replace with your hero image */
+  background-image: url('src/components/images/DSC06815.JPG'); /* Replace with your hero image */
   background-size: cover;
   background-position: center;
   color: white;
@@ -62,21 +62,21 @@ const Media = () => {
       <MediaContainer>
         <MediaCard>
           <MediaVideo controls>
-            <source src="/path-to-media-video-1.mp4" type="video/mp4" />
+            <source src="src\components\videos\VID-20230918-WA0010.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </MediaVideo>
           <Description>Description 1</Description>
         </MediaCard>
         <MediaCard>
           <MediaVideo controls>
-            <source src="/path-to-media-video-2.mp4" type="video/mp4" />
+            <source src="src\components\videos\VID-20230918-WA0011.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </MediaVideo>
           <Description>Description 2</Description>
         </MediaCard>
         <MediaCard>
           <MediaVideo controls>
-            <source src="/path-to-media-video-3.mp4" type="video/mp4" />
+            <source src="src\components\videos\VID-20230918-WA0012.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </MediaVideo>
           <Description>Description 3</Description>

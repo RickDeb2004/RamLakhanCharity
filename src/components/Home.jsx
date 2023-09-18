@@ -35,7 +35,25 @@ const CarouselImage = styled.img`
   max-height: 400px;
   object-fit: cover; /* Maintain aspect ratio and cover container */
 `;
+const CircleCard = styled.div`
+  text-align: center;
+  margin-top: 50px;
+`;
 
+const CircleImage = styled.img`
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #333; /* Add a border around the circle */
+  margin: 0 auto;
+`;
+
+const CircleText = styled.p`
+  font-weight: bold;
+  font-size: 24px;
+  margin-top: 20px;
+`;
 
 const Home = () => {
   return (
@@ -43,21 +61,21 @@ const Home = () => {
       <Navbar />
       <HeroSection>
         <CarouselContainer>
-          <Carousel infiniteLoop autoPlay showStatus={false} showThumbs={false}  interval={2000}>
+          <Carousel infiniteLoop autoPlay showStatus={false} showThumbs={false}  interval={3000}>
           <div>
-              <CarouselImage src="src\components\images\logo (1).png" alt="Image 1" />
+              <CarouselImage src="src\components\images\DSC06815.JPG" alt="Image 1" />
             </div>
             <div>
-              <CarouselImage src="src\components\images\himanshu.jpeg" alt="Image 2" />
+              <CarouselImage src="src\components\images\C46B9FDC-A2EE-4CF8-9FD5-6D875E8E3034.JPEG" alt="Image 2" />
             </div>
             <div>
-              <CarouselImage src="src\components\images\chairman.jpeg" alt="Image 3" />
+              <CarouselImage src="src\components\images\IMG_5066.JPG" alt="Image 3" />
             </div>
             <div>
-              <CarouselImage src="src\components\images\agradev.jpeg" alt="Image 4" />
+              <CarouselImage src="src\components\images\IMG_5058.JPG" alt="Image 4" />
             </div>
             <div>
-              <CarouselImage src="src\components\images\nishant.jpeg" alt="Image 5" />
+              <CarouselImage src="src\components\images\IMG_5068.JPG" alt="Image 5" />
             </div>
           </Carousel>
         </CarouselContainer>
@@ -74,6 +92,11 @@ const Home = () => {
           nunc odio et ex.
         </p>
       </ContentSection>
+      <CircleCard>
+        <CircleImage src="src\components\images\guruji.jpg" alt="Guru Kripa" />
+        <CircleText>Guru Kripa</CircleText>
+      </CircleCard>
+
       <Footer />
     </HomeContainer>
   );

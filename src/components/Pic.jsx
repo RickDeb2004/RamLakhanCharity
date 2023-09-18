@@ -9,7 +9,7 @@ const PicWrapper = styled.div`
 `;
 
 const HeroSection = styled.section`
-  background-image: url("src/components/images/utkarsh.jpeg"); /* Replace with your hero image path */
+  background-image: url("src/components/images/DSC06815.JPG"); /* Replace with your hero image path */
   background-size: cover;
   background-position: center;
   color: white;
@@ -61,7 +61,7 @@ const Pic = () => {
       </HeroSection>
 
       <CardContainer>
-        {Array.from({ length: 25 }).map((_, index) => (
+        {Array.from({ length: 24 }).map((_, index) => (
           <Card key={index}>
             <CardImage
               src={`src/components/images/gal${index}.jpeg`}
