@@ -18,6 +18,11 @@ const HeroSection = styled.section`
   justify-content: center;
   align-items: center;
   padding: 100px 0; /* Adjust the padding as needed */
+
+  /* Responsive styles for small screens (phones) */
+  @media (max-width: 600px) {
+    padding: 20px 0;
+  }
 `;
 
 const CarouselContainer = styled.div`
@@ -35,9 +40,15 @@ const CarouselImage = styled.img`
   max-height: 400px;
   object-fit: cover; /* Maintain aspect ratio and cover container */
 `;
+
 const CircleCard = styled.div`
   text-align: center;
   margin-top: 50px;
+
+  /* Responsive styles for small screens (phones) */
+  @media (max-width: 600px) {
+    margin-top: 10px;
+  }
 `;
 
 const CircleImage = styled.img`
@@ -61,8 +72,8 @@ const Home = () => {
       <Navbar />
       <HeroSection>
         <CarouselContainer>
-          <Carousel infiniteLoop autoPlay showStatus={false} showThumbs={false}  interval={3000}>
-          <div>
+          <Carousel infiniteLoop autoPlay showStatus={false} showThumbs={false} interval={3000}>
+            <div>
               <CarouselImage src="src\components\images\DSC06815.JPG" alt="Image 1" />
             </div>
             <div>

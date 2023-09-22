@@ -41,7 +41,7 @@ const MediaCard = styled.div`
 
 const MediaVideo = styled.video`
   max-width: 100%;
-  height: auto;
+  height: 500px;
 `;
 
 const Description = styled.p`

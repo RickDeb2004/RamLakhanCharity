@@ -8,17 +8,16 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 const NavbarWrapper = styled.nav`
   background-color: #333;
   color: white;
-  padding: 10px 0;
+  padding: 10px 20px; /* Adjust the padding as needed */
 `;
 
 const NavContainer = styled.div`
+  width: 100%; /* Adjust the width to make the Navbar full width */
   width: 1000px;
-  max-length:auto;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
 `;
 
 const NavLinks = styled.div`
@@ -73,7 +72,8 @@ const DropdownItem = styled(NavLink)`
 `;
 
 const LogoImage = styled.img`
-  max-width: 100px; /* Adjust the max-width as needed */
+  max-width: 50px; /* Adjust the max-width as needed */
+
 `;
 
 const HamBarIcon = styled.div`
@@ -85,12 +85,9 @@ const HamBarIcon = styled.div`
   }
 `;
 
-
-
 const Navbar = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-
 
   const toggleDropdown = () => {
     setDropdownOpen(!isDropdownOpen);
@@ -100,14 +97,13 @@ const Navbar = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
   };
 
-
   return (
     <NavbarWrapper>
       <NavContainer>
-      <HamBarIcon onClick={toggleMobileMenu}>
+        <HamBarIcon onClick={toggleMobileMenu}>
           <FontAwesomeIcon icon={faBars} />
         </HamBarIcon>
-      <LogoImage src="src\components\images\logo (1).png" alt="Your Logo" />
+        <LogoImage src="src\components\images\logo (1).png" alt="Your Logo" />
         <NavLinks isOpen={isMobileMenuOpen}>
           <NavLinkItem exact to="/home">
             Home
