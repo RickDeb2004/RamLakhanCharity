@@ -10,6 +10,7 @@ const HomeContainer = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh; /* Ensure the container takes at least the full viewport height */
+  background-image:url('src/components/images/hmn11.jpg')
 `;
 
 const HeroSection = styled.section`
@@ -36,8 +37,8 @@ const ContentSection = styled.section`
 `;
 
 const CarouselImage = styled.img`
-  max-width: 400px;
-  max-height: 400px;
+  max-width: 800px;
+  max-height: 800px;
   object-fit: cover; /* Maintain aspect ratio and cover container */
 `;
 

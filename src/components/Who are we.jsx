@@ -6,6 +6,7 @@ import Footer from './Footer';
 
 const WhoAreWeWrapper = styled.div`
   background-color: #f7f7f7;
+  background-image:url('src/components/images/hmn11.jpg');
 `;
 
 const HeroSection = styled.section`
@@ -61,6 +62,12 @@ const ProjectCardContent = styled.p`
   font-size: 16px;
 `;
 
+const ContentGrid = styled.div`
+  display: grid;
+  grid-template-columns: 75% 25%;
+  gap: 20px;
+`;
+
 const WhoAreWe = () => {
   return (
     <WhoAreWeWrapper>
@@ -79,8 +86,10 @@ const WhoAreWe = () => {
       </ContentSection>
 
       {/* First Row */}
+      
       <Row>
-        <Content>
+        <ContentGrid>
+        <Content style={{flex:'75%'}}>
           <h3>OBJECTIVES OF THE TRUST</h3>
           <p>
           To provide underprivileged students with a solid foundation and a high-quality education.
@@ -94,14 +103,16 @@ Participate in social, cultural, and literary activities to promote the nationâ€
 To establish, support, and maintain educational institutes in need of upliftment
           </p>
         </Content>
-        <ProjectCard>
+        <ProjectCard style={{ flex: '25%' }}>
           <ProjectCardHeading>Our Values</ProjectCardHeading>
           <ProjectCardContent>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique urna eu libero
             fringilla, eget suscipit libero vehicula.
           </ProjectCardContent>
         </ProjectCard>
+        </ContentGrid>
       </Row>
+      <div style={{ marginBottom: '20px' }}></div>
 
       {/* Second Row */}
       <Row>
@@ -118,7 +129,7 @@ To establish, support, and maintain educational institutes in need of upliftment
           </ProjectCardContent>
         </ProjectCard>
       </Row>
-
+      <div style={{ marginBottom: '10px' }}></div>
       <Footer />
     </WhoAreWeWrapper>
   );

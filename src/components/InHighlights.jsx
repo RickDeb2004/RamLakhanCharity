@@ -1,32 +1,29 @@
-// Removed unused import statement
-// import React from 'react';
-
+import  { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import useFirestore from '../hooks/useFirestore';
-// Removed unused import statement
-// import styled from 'styled-components';
+import { ref, getDownloadURL, listAll } from 'firebase/storage';
+import { storage } from '../firbase'; // Import your Firebase storage configuration
 
 const InHighlightsWrapper = styled.div`
   background-color: #f7f7f7;
 `;
 
 const HeroSection = styled.section`
-  background-image: url('src/components/images/DSC06815.JPG');
+  background-image: url('src/components/images/DSC06815.JPG'); /* Replace with your hero image path */
   background-size: cover;
   background-position: center;
   color: white;
   text-align: center;
-  padding: 100px 0;
+  padding: 100px 0; /* Adjust the padding as needed */
 `;
 
 const ProjectCardsContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding: 25px;
-  justify-content: center;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns in a row */
+  gap: 20px; /* Adjust the gap between cards as needed */
+  padding: 25px; /* Adjust the padding as needed */
+  justify-content: center; /* Center align cards horizontally */
 `;
 
 const ProjectCard = styled.div`
@@ -36,6 +33,7 @@ const ProjectCard = styled.div`
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
+  /* Additional styling for the project card goes here */
 `;
 
 const ProjectCardImage = styled.img`
@@ -44,16 +42,52 @@ const ProjectCardImage = styled.img`
 `;
 
 const InHighlights = () => {
-  const { docs: imageDocs } = useFirestore('images');
+  const [imageUrls, setImageUrls] = useState([]);
+  const imagelistref = ref(storage, 'images/');
 
+  // useEffect(() => {
+  //   listAll(imagelistref)
+  //     .then((response) => {
+  //       response.items.forEach((item) => {
+  //         getDownloadURL(item).then((url) => {
+  //           setImageUrls((prev) => [...prev, url]);
+  //         });
+  //       });
+  //     })
+  //     .catch((error) => {
+  //       console.error('Error fetching image URLs:', error);
+  //     });
+  // }, []); // Add imagelistref to the dependency array
+  useEffect(() => {
+    listAll(imagelistref)
+      .then((response) => {
+        console.log(response);
+        const urls = response.items.map((item) => getDownloadURL(item));
+        Promise.all(urls)
+          .then((urlArray) => {
+            setImageUrls(urlArray);
+          })
+          .catch((error) => {
+            console.error('Error fetching image URLs:', error);
+          });
+      })
+      .catch((error) => {
+        console.error('Error listing images:', error);
+      });
+  }, []);
+
+  
+// console.log(imageUrls);
   return (
     <InHighlightsWrapper>
       <Navbar />
-      <HeroSection>{/* Replace with your hero image path */}</HeroSection>
+      <HeroSection>
+        {/* Replace with your hero image path */}
+      </HeroSection>
       <ProjectCardsContainer>
-        {imageDocs.map((imageDoc, index) => (
+        {imageUrls.map((imageUrl, index) => (
           <ProjectCard key={index}>
-            <ProjectCardImage src={imageDoc.url} alt={`Project ${index + 1}`} />
+            <ProjectCardImage src={imageUrl} alt={`Project ${index + 1}`} />
             {/* Additional content for Project Card */}
           </ProjectCard>
         ))}

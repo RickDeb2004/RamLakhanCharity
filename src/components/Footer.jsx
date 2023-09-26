@@ -69,7 +69,7 @@ const Footer = () => {
           <FooterHeading>Quick Links</FooterHeading>
           <QuickLinkItem href="/home">Home</QuickLinkItem>
           <QuickLinkItem href="/about">About Us</QuickLinkItem>
-          <QuickLinkItem href="/what-we-do">What We Do</QuickLinkItem>
+          <QuickLinkItem href="/in-highlights">In-Highlights</QuickLinkItem>
           <QuickLinkItem href="/pic">Pic</QuickLinkItem>
           <QuickLinkItem href="/media">Media</QuickLinkItem>
           <QuickLinkItem href="/contact">Contact</QuickLinkItem>

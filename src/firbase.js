@@ -4,37 +4,17 @@ import { getStorage } from "firebase/storage";
 // Remove the following line since initializeApp has already been imported above
 // import { initializeApp } from 'firebase/app';
 
-import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_REACT_APP_API_KEY,
-  authDomain: import.meta.env.VITE_REACT_APP_AUTH_DOMAIN,
-  projectId: import.meta.env.VITE_REACT_APP_PROJECT_ID,
-  storageBucket: import.meta.env.VITE_REACT_APP_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.VITE_REACT_APP_MESSAGING_SENDER_ID,
-  appId: import.meta.env.VITE_REACT_APP_APP_ID,
+  apiKey: "AIzaSyA0PbWDKWDyEw0fopRAcstHhqusEAfOHJ0",
+  authDomain: "fir-star-5cbc1.firebaseapp.com",
+  projectId: "fir-star-5cbc1",
+  storageBucket: "fir-star-5cbc1.appspot.com",
+  messagingSenderId: "464393615099",
+  appId: "1:464393615099:web:0e2219b70d35d68326e25e",
+  measurementId: "G-97PNX445TT"
 };
 
 // Initialize Firebase
-const firebaseApp = initializeApp(firebaseConfig);
-
-// Get a reference to Firebase Storage
-const projectStorage = getStorage(firebaseApp);
-
-// Get a reference to Firestore
-const projectFirestore = getFirestore(firebaseApp);
-
-export const getImageFiles = async () => {
-  try {
-    const imageRefs = await projectStorage.ref("images").listAll();
-    return imageRefs.items;
-  } catch (error) {
-    console.error("Error fetching image files:", error);
-    return [];
-  }
-};
-
-export { projectFirestore, projectStorage };
-// Import other Firebase modules as needed
-
-// Path: src/hooks/useStorage.js
+const app = initializeApp(firebaseConfig);
+export const storage = getStorage(app);

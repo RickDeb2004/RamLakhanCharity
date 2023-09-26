@@ -6,6 +6,7 @@ import Footer from './Footer';
 
 const ContactWrapper = styled.div`
   background-color: #f7f7f7;
+  background-image:url('src/components/images/hmn11.jpg')
 `;
 
 const HeroSection = styled.section`

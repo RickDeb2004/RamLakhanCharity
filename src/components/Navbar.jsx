@@ -25,7 +25,7 @@ const NavLinks = styled.div`
   gap: 20px;
 
   @media (max-width: 768px) {
-    display: ${(props) => (props.isOpen ? 'flex' : 'none')};
+    display: ${(props) => (props['data-isopen']? 'flex' : 'none')};
     flex-direction: column;
     position: absolute;
     top: 60px;
@@ -52,7 +52,7 @@ const Dropdown = styled.div`
 `;
 
 const DropdownContent = styled.div`
-  display: ${(props) => (props.isOpen ? 'block' : 'none')};
+  display: ${(props) => (props['data-isopen']? 'block' : 'none')};
   position: absolute;
   background-color: #333;
   min-width: 160px;
@@ -104,16 +104,18 @@ const Navbar = () => {
           <FontAwesomeIcon icon={faBars} />
         </HamBarIcon>
         <LogoImage src="src\components\images\logo (1).png" alt="Your Logo" />
-        <NavLinks isOpen={isMobileMenuOpen}>
-          <NavLinkItem exact to="/home">
+        <NavLinks data-isopen={isMobileMenuOpen}>
+          <NavLinkItem exact='true' to="/home">
             Home
           </NavLinkItem>
           <Dropdown>
+           
             <span onClick={toggleDropdown}>About Us</span>
-            <DropdownContent isOpen={isDropdownOpen}>
+            <DropdownContent data-isopen={isDropdownOpen}>
               <DropdownItem to="/who-are-we">Who Are We</DropdownItem>
               <DropdownItem to="/board-of-directors">Board Of Directors And Members</DropdownItem>
             </DropdownContent>
+            
           </Dropdown>
           <NavLinkItem to="/in-highlights">In-Highlights</NavLinkItem>
           <NavLinkItem to="/pic">Gallery</NavLinkItem>
