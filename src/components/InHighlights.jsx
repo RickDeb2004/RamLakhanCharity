@@ -37,8 +37,14 @@ const ProjectCard = styled.div`
 `;
 
 const ProjectCardImage = styled.img`
+  // max-width: 100%;
+  // height: auto;
+  // object-fit:contain;
   max-width: 100%;
-  height: auto;
+  max-height: 200px;
+  //height: auto;
+  object-fit:contain;
+  border-radius: 4px;
 `;
 
 const InHighlights = () => {

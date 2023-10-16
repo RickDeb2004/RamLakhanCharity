@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 import { initializeApp } from "firebase/app";
 import { getStorage } from "firebase/storage";
+import { getFirestore } from 'firebase/firestore'
 // Remove the following line since initializeApp has already been imported above
 // import { initializeApp } from 'firebase/app';
 
@@ -17,4 +18,6 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+
+export const db = getFirestore(app);
 export const storage = getStorage(app);

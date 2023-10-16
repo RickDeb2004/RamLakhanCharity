@@ -11,6 +11,7 @@ import Pic from "./components/Pic";
 import WhoAreWe from "./components/Who are we";
 import BoardOfDirectors from "./components/Board of directors";
 import InHighlights from "./components/InHighlights";
+import FAQ from "./components/Faq";
 const App = () => {
   return (
     <Router>
@@ -26,6 +27,7 @@ const App = () => {
         <Route path="/who-are-we" element={<WhoAreWe />} />
         <Route path="/board-of-directors" element={<BoardOfDirectors />} />
         <Route path="/in-highlights" element={<InHighlights />} />
+        <Route path="/faq" element={<FAQ />} />
 
 
       </Routes>

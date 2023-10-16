@@ -122,8 +122,10 @@ const Navbar = () => {
           <NavLinkItem to="/media">Media</NavLinkItem>
           <NavLinkItem to="/contact">Contact</NavLinkItem>
           <NavLinkItem to="/doctor-profile">Doctors-profile</NavLinkItem>
+          <NavLinkItem to="/faq">FAQ</NavLinkItem>
         </NavLinks>
       </NavContainer>
+      
     </NavbarWrapper>
   );
 };

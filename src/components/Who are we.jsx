@@ -40,6 +40,7 @@ const Row = styled.div`
 
 const Content = styled.div`
   flex: 75%; /* 75% of the row */
+  
 `;
 
 const ProjectCard = styled.div`
@@ -59,7 +60,7 @@ const ProjectCardHeading = styled.h3`
 `;
 
 const ProjectCardContent = styled.p`
-  font-size: 16px;
+  font-size: 18px;
 `;
 
 const ContentGrid = styled.div`

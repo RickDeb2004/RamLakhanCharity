@@ -1,8 +1,10 @@
 // eslint-disable-next-line no-unused-vars
-import React from "react";
+import React ,{ useState, useEffect }from "react";
 import styled from "styled-components";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import { ref, getDownloadURL, listAll } from 'firebase/storage';
+import { storage } from '../firbase'; // Import your Firebase storage configuration
 
 const PicWrapper = styled.div`
   background-color: #f7f7f7;
@@ -50,6 +52,41 @@ const HeroImage = styled.img`
   margin: 0 auto; /* Center the image horizontally */
 `;
 const Pic = () => {
+  const [imageUrls, setImageUrls] = useState([]);
+  const imagelistref = ref(storage, 'gallery/');
+
+  // useEffect(() => {
+  //   listAll(imagelistref)
+  //     .then((response) => {
+  //       response.items.forEach((item) => {
+  //         getDownloadURL(item).then((url) => {
+  //           setImageUrls((prev) => [...prev, url]);
+  //         });
+  //       });
+  //     })
+  //     .catch((error) => {
+  //       console.error('Error fetching image URLs:', error);
+  //     });
+  // }, []); // Add imagelistref to the dependency array
+  useEffect(() => {
+    listAll(imagelistref)
+      .then((response) => {
+        console.log(response);
+        const urls = response.items.map((item) => getDownloadURL(item));
+        Promise.all(urls)
+          .then((urlArray) => {
+            setImageUrls(urlArray);
+          })
+          .catch((error) => {
+            console.error('Error fetching image URLs:', error);
+          });
+      })
+      .catch((error) => {
+        console.error('Error listing images:', error);
+      });
+  }, []);
+
+
   return (
     <PicWrapper>
       <Navbar />
@@ -61,12 +98,9 @@ const Pic = () => {
       </HeroSection>
 
       <CardContainer>
-        {Array.from({ length: 24 }).map((_, index) => (
+      {imageUrls.map((imageUrl, index) =>(
           <Card key={index}>
-            <CardImage
-              src={`src/components/images/gal${index}.jpeg`}
-              alt={`Image ${index}`}
-            />
+            <CardImage src={imageUrl} alt={`Project ${index + 1}`} />
           </Card>
         ))}
       </CardContainer>

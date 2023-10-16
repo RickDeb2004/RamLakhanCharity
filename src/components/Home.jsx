@@ -1,10 +1,12 @@
 // eslint-disable-next-line no-unused-vars
-import React from 'react';
+import React,{useEffect,useState} from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import styled from 'styled-components';
 import Navbar from './Navbar';
 import Footer from './Footer';
+ // Import your Firebase storage configuration
+
 
 const HomeContainer = styled.div`
   display: flex;
@@ -27,6 +29,7 @@ const HeroSection = styled.section`
 `;
 
 const CarouselContainer = styled.div`
+width:100%;
   max-width: 100%; /* Adjust the width as needed */
   margin: 0 auto;
 `;
@@ -37,8 +40,8 @@ const ContentSection = styled.section`
 `;
 
 const CarouselImage = styled.img`
-  max-width: 800px;
-  max-height: 800px;
+  width: 100%;
+  height: auto;
   object-fit: cover; /* Maintain aspect ratio and cover container */
 `;
 
@@ -68,28 +71,33 @@ const CircleText = styled.p`
 `;
 
 const Home = () => {
+ 
+
   return (
     <HomeContainer>
       <Navbar />
       <HeroSection>
         <CarouselContainer>
-          <Carousel infiniteLoop autoPlay showStatus={false} showThumbs={false} interval={3000}>
+        <Carousel infiniteLoop autoPlay showStatus={false} showThumbs={false} interval={3000}>
+            {/* Use responsive image paths */}
             <div>
-              <CarouselImage src="src\components\images\DSC06815.JPG" alt="Image 1" />
+              <CarouselImage src="src/components/images/DSC06815.JPG" alt="Image 1" />
             </div>
             <div>
-              <CarouselImage src="src\components\images\C46B9FDC-A2EE-4CF8-9FD5-6D875E8E3034.JPEG" alt="Image 2" />
+              <CarouselImage src="src/components/images/C46B9FDC-A2EE-4CF8-9FD5-6D875E8E3034.JPEG" alt="Image 2" />
             </div>
             <div>
-              <CarouselImage src="src\components\images\IMG_5066.JPG" alt="Image 3" />
+              <CarouselImage src="src/components/images/IMG_5066.JPG" alt="Image 3" />
             </div>
             <div>
-              <CarouselImage src="src\components\images\IMG_5058.JPG" alt="Image 4" />
+              <CarouselImage src="src/components/images/IMG_5058.JPG" alt="Image 4" />
             </div>
             <div>
-              <CarouselImage src="src\components\images\IMG_5068.JPG" alt="Image 5" />
+              <CarouselImage src="src/components/images/IMG_5068.JPG" alt="Image 5" />
             </div>
           </Carousel>
+        
+          
         </CarouselContainer>
       </HeroSection>
 
