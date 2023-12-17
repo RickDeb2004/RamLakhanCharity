@@ -1,17 +1,16 @@
-import  { useEffect, useState } from 'react';
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-import Navbar from './Navbar';
-import Footer from './Footer';
-import { ref, getDownloadURL, listAll } from 'firebase/storage';
-import { storage } from '../firbase'; // Import your Firebase storage configuration
-
+import { useEffect, useState } from "react";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
+import { ref, getDownloadURL, listAll } from "firebase/storage";
+import { storage } from "../firbase";
 const DoctorProfileWrapper = styled.div`
   padding: 20px;
 `;
 
 const HeroSection = styled.section`
-  background-image: url('src/components/images/DSC06815.JPG'); /* Replace with your hero image */
+  background-image: url("src/components/images/DSC06815.JPG"); /* Replace with your hero image */
   background-size: cover;
   background-position: center;
   color: white;
@@ -36,17 +35,16 @@ const DoctorCard = styled.div`
   flex: 1;
   background-color: #f4f4f4;
   padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 `;
 
 const DoctorImage = styled.img`
-  // max-width: 100%;
-  // height: auto;
-  width: 300px; /* Set the width of the square box */
-  height: 300px; /* Set the height of the square box */
-  object-fit: cover; /* This will make the image fully fit within the box */
-  border-radius: 50%; /* To create a circular appearance for the image */
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
 `;
 
 const Description = styled.p`
@@ -63,7 +61,7 @@ const DoctorProfile = () => {
   const [doctorsData, setDoctorsData] = useState([]);
 
   useEffect(() => {
-    const imagelistref = ref(storage, 'doctors-profile/'); // Replace with the correct storage path
+    const imagelistref = ref(storage, "doctors-profile/"); // Replace with the correct storage path
 
     listAll(imagelistref)
       .then((response) => {
@@ -80,42 +78,37 @@ const DoctorProfile = () => {
             setDoctorsData(doctors);
           })
           .catch((error) => {
-            console.error('Error fetching doctor profiles:', error);
+            console.error("Error fetching doctor profiles:", error);
           });
       })
       .catch((error) => {
-        console.error('Error fetching image URLs:', error);
+        console.error("Error fetching image URLs:", error);
       });
   }, []);
 
-  // Define a function to get descriptions based on the item's name
   const getDoctorDescription = (name) => {
-    // You can implement your logic to fetch descriptions here
-    // For example, you can use a database or an array of descriptions
-    // For now, we'll provide a simple example
-    if (name === 'IMG-20230925-WA0018.jpg') {
-      return 'Description for Doctor 1';
-    } else if (name === 'doctor2.jpg') {
-      return 'Description for Doctor 2';
+    if (name === "IMG-20230925-WA0018.jpg") {
+      return "Description for Doctor 1";
+    } else if (name === "doctor2.jpg") {
+      return "Description for Doctor 2";
     }
-    // Add more conditions for other doctors
-    return 'Default description';
+
+    return "Default description";
   };
 
   return (
     <DoctorProfileWrapper>
       <Navbar />
-      <HeroSection>
-       
-      </HeroSection>
-      
+      <HeroSection></HeroSection>
 
       <DoctorCardsContainer>
         {doctorsData.map((doctor) => (
           <DoctorCard key={doctor.id}>
             <DoctorImage src={doctor.image} alt={`Dr. ${doctor.id}`} />
             <Description>{doctor.description}</Description>
-            <ViewMoreLink to={`/doctor-profile/${doctor.id}`}>View More</ViewMoreLink>
+            <ViewMoreLink to={`/doctor-profile/${doctor.id}`}>
+              View More
+            </ViewMoreLink>
           </DoctorCard>
         ))}
       </DoctorCardsContainer>

@@ -1,3 +1,4 @@
+// eslint-disable-next-line max-len
 import  { useState } from 'react';
 import styled from 'styled-components';
 import Navbar from './Navbar';
@@ -46,7 +47,7 @@ const QuestionText = styled.div`
 
 const ExpandArrow = styled.div`
   transition: transform 0.3s ease;
-  transform: rotae(${(props) =>(props.expanded ? '180deg' : '0deg')});
+  transform: rotate(${(props) => (props.expanded ? '180deg' : '0deg')});
   cursor: pointer;
   font-size: 24px;
 `;
@@ -77,7 +78,7 @@ const FAQ = () => {
           <FAQQuestion onClick={() => toggleFAQ(index)}>
             <QuestionText>{item.question}</QuestionText>
             <ExpandArrow expanded={item.expanded}>
-            <FontAwesomeIcon icon={faAngleUp} />
+              <FontAwesomeIcon icon={faAngleUp} />
             </ExpandArrow>
           </FAQQuestion>
           {item.expanded && <p>{item.answer}</p>}

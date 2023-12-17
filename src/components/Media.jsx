@@ -1,17 +1,17 @@
 // eslint-disable-next-line no-unused-vars
-import React,{ useState, useEffect } from 'react';
-import styled from 'styled-components';
-import Navbar from './Navbar'; // Import your Navbar component here
-import Footer from './Footer';
-import { ref, getDownloadURL, listAll } from 'firebase/storage';
-import { storage } from '../firbase'; 
+import React, { useState, useEffect } from "react";
+import styled from "styled-components";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
+import { ref, getDownloadURL, listAll } from "firebase/storage";
+import { storage } from "../firbase";
 
 const MediaWrapper = styled.div`
   padding: 20px; /* Adjust the padding as needed */
 `;
 
 const HeroSection = styled.section`
-  background-image: url('src/components/images/DSC06815.JPG'); /* Replace with your hero image */
+  background-image: url("src/components/images/DSC06815.JPG"); /* Replace with your hero image */
   background-size: cover;
   background-position: center;
   color: white;
@@ -52,21 +52,8 @@ const Description = styled.p`
 
 const Media = () => {
   const [videoUrls, setVideoUrls] = useState([]);
-  const videolistref = ref(storage, 'videos/');
+  const videolistref = ref(storage, "videos/");
 
-  // useEffect(() => {
-  //   listAll(imagelistref)
-  //     .then((response) => {
-  //       response.items.forEach((item) => {
-  //         getDownloadURL(item).then((url) => {
-  //           setImageUrls((prev) => [...prev, url]);
-  //         });
-  //       });
-  //     })
-  //     .catch((error) => {
-  //       console.error('Error fetching image URLs:', error);
-  //     });
-  // }, []); // Add imagelistref to the dependency array
   useEffect(() => {
     listAll(videolistref)
       .then((response) => {
@@ -77,11 +64,11 @@ const Media = () => {
             setVideoUrls(urlArray);
           })
           .catch((error) => {
-            console.error('Error fetching image URLs:', error);
+            console.error("Error fetching image URLs:", error);
           });
       })
       .catch((error) => {
-        console.error('Error listing images:', error);
+        console.error("Error listing images:", error);
       });
   }, []);
   return (
@@ -95,29 +82,13 @@ const Media = () => {
       </HeroSection>
 
       <MediaContainer>
-      {videoUrls.map((videoUrl, index) => (
-        <MediaCard key={index}>
-          <MediaVideo controls  src={videoUrl} alt={`Project ${index + 1}`}/>
-            
-          
-          <Description>Description 1</Description>
-        
-        </MediaCard>
-         ))}
-        {/* <MediaCard>
-          <MediaVideo controls>
-            <source src="src\components\videos\VID-20230918-WA0011.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </MediaVideo>
-          <Description>Description 2</Description>
-        </MediaCard>
-        <MediaCard>
-          <MediaVideo controls>
-            <source src="src\components\videos\VID-20230918-WA0012.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </MediaVideo>
-          <Description>Description 3</Description>
-        </MediaCard> */}
+        {videoUrls.map((videoUrl, index) => (
+          <MediaCard key={index}>
+            <MediaVideo controls src={videoUrl} alt={`Project ${index + 1}`} />
+
+            <Description>Description 1</Description>
+          </MediaCard>
+        ))}
       </MediaContainer>
       <Footer />
     </MediaWrapper>

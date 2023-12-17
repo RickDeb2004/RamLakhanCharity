@@ -1,15 +1,15 @@
 // eslint-disable-next-line no-unused-vars
-import React from 'react';
-import styled from 'styled-components';
-import Navbar from './Navbar'; // Import your Navbar component here
-import Footer from './Footer';
+import React from "react";
+import styled from "styled-components";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 const AboutWrapper = styled.div`
   padding: 20px; /* Adjust the padding as needed */
 `;
 
 const HeroSection = styled.section`
-  background-image: url('/path-to-hero-image.jpg'); /* Replace with your hero image */
+  background-image: url("/path-to-hero-image.jpg"); /* Replace with your hero image */
   background-size: cover;
   background-position: center;
   color: white;
@@ -18,6 +18,8 @@ const HeroSection = styled.section`
 `;
 
 const HeroText = styled.div`
+  font-family: "Roboto", sans-serif;
+  font-weight: 600px;
   max-width: 800px;
   margin: 0 auto;
 `;
@@ -31,6 +33,13 @@ const ParagraphContainer = styled.div`
 
 const Paragraph = styled.p`
   flex: 1;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+`;
+
+const Paragraph1 = styled.div`
+  font-family: "Roboto", sans-serif;
+  font-weight: 200;
 `;
 
 const SquareBoxContainer = styled.div`
@@ -62,15 +71,17 @@ const About = () => {
       <HeroSection>
         <HeroText>
           <h1>About Us</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <Paragraph>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </Paragraph>
         </HeroText>
       </HeroSection>
 
       <ParagraphContainer>
-        <Paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique urna eu libero fringilla, eget
-          suscipit libero vehicula.
-        </Paragraph>
+        <Paragraph1>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique
+          urna eu libero fringilla, eget suscipit libero vehicula.
+        </Paragraph1>
         <SquareBoxContainer>
           <SquareBox>
             <h2>5 Questions</h2>
@@ -83,7 +94,7 @@ const About = () => {
           </SquareBox>
         </SquareBoxContainer>
       </ParagraphContainer>
-      <Footer/>
+      <Footer />
     </AboutWrapper>
   );
 };

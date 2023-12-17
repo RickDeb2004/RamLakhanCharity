@@ -1,16 +1,16 @@
-import  { useState, useEffect } from 'react';
-import styled from 'styled-components';
-import Navbar from './Navbar';
-import Footer from './Footer';
-import { ref, getDownloadURL, listAll } from 'firebase/storage';
-import { storage } from '../firbase'; // Import your Firebase storage configuration
+import { useState, useEffect } from "react";
+import styled from "styled-components";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
+import { ref, getDownloadURL, listAll } from "firebase/storage";
+import { storage } from "../firbase";
 
 const InHighlightsWrapper = styled.div`
   background-color: #f7f7f7;
 `;
 
 const HeroSection = styled.section`
-  background-image: url('src/components/images/DSC06815.JPG'); /* Replace with your hero image path */
+  background-image: url("src/components/images/DSC06815.JPG"); /* Replace with your hero image path */
   background-size: cover;
   background-position: center;
   color: white;
@@ -43,27 +43,14 @@ const ProjectCardImage = styled.img`
   max-width: 100%;
   max-height: 200px;
   //height: auto;
-  object-fit:contain;
+  object-fit: contain;
   border-radius: 4px;
 `;
 
 const InHighlights = () => {
   const [imageUrls, setImageUrls] = useState([]);
-  const imagelistref = ref(storage, 'images/');
+  const imagelistref = ref(storage, "images/");
 
-  // useEffect(() => {
-  //   listAll(imagelistref)
-  //     .then((response) => {
-  //       response.items.forEach((item) => {
-  //         getDownloadURL(item).then((url) => {
-  //           setImageUrls((prev) => [...prev, url]);
-  //         });
-  //       });
-  //     })
-  //     .catch((error) => {
-  //       console.error('Error fetching image URLs:', error);
-  //     });
-  // }, []); // Add imagelistref to the dependency array
   useEffect(() => {
     listAll(imagelistref)
       .then((response) => {
@@ -74,27 +61,22 @@ const InHighlights = () => {
             setImageUrls(urlArray);
           })
           .catch((error) => {
-            console.error('Error fetching image URLs:', error);
+            console.error("Error fetching image URLs:", error);
           });
       })
       .catch((error) => {
-        console.error('Error listing images:', error);
+        console.error("Error listing images:", error);
       });
   }, []);
 
-  
-// console.log(imageUrls);
   return (
     <InHighlightsWrapper>
       <Navbar />
-      <HeroSection>
-        {/* Replace with your hero image path */}
-      </HeroSection>
+      <HeroSection></HeroSection>
       <ProjectCardsContainer>
         {imageUrls.map((imageUrl, index) => (
           <ProjectCard key={index}>
             <ProjectCardImage src={imageUrl} alt={`Project ${index + 1}`} />
-            {/* Additional content for Project Card */}
           </ProjectCard>
         ))}
       </ProjectCardsContainer>

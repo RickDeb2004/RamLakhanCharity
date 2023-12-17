@@ -1,8 +1,7 @@
 // eslint-disable-next-line no-unused-vars
-import React from 'react';
-import styled from 'styled-components';
-import { FaFacebook,  FaInstagram,  } from 'react-icons/fa';
-
+import React from "react";
+import styled from "styled-components";
+import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 const FooterWrapper = styled.footer`
   background-color: #333;
@@ -19,16 +18,7 @@ const FooterContainer = styled.div`
   padding: 0 20px;
 `;
 
-const QuickLinks = styled.div`
-  flex: 1;
-`;
-
-const ContactUs = styled.div`
-  flex: 1;
-  margin-top: 20px;
-`;
-
-const SocialMedia = styled.div`
+const FooterSection = styled.div`
   flex: 1;
   margin-top: 20px;
 `;
@@ -65,7 +55,7 @@ const Footer = () => {
   return (
     <FooterWrapper>
       <FooterContainer>
-        <QuickLinks>
+        <FooterSection>
           <FooterHeading>Quick Links</FooterHeading>
           <QuickLinkItem href="/home">Home</QuickLinkItem>
           <QuickLinkItem href="/about">About Us</QuickLinkItem>
@@ -74,8 +64,20 @@ const Footer = () => {
           <QuickLinkItem href="/media">Media</QuickLinkItem>
           <QuickLinkItem href="/contact">Contact</QuickLinkItem>
           <QuickLinkItem href="/doctor-profile">Doctors Profile</QuickLinkItem>
-        </QuickLinks>
-        <ContactUs>
+        </FooterSection>
+        <FooterSection>
+          <FooterHeading>Follow Us</FooterHeading>
+          <SocialMediaLink href="https://www.facebook.com/profile.php?id=100076468233609&mibextid=LQQJ4d">
+            <FaFacebook />
+          </SocialMediaLink>
+          <SocialMediaLink href="https://instagram.com/ramlakhan_trust?igshid=MzRlODBiNWFlZA==">
+            <FaInstagram />
+          </SocialMediaLink>
+          <SocialMediaLink href="https://twitter.com/your-twitter-handle">
+            <FaTwitter />
+          </SocialMediaLink>
+        </FooterSection>
+        <FooterSection>
           <FooterHeading>Contact Us</FooterHeading>
           <ContactInfo>
             <p>123 Main Street</p>
@@ -83,14 +85,7 @@ const Footer = () => {
             <p>Phone: +123 456 789</p>
             <p>Email: example@example.com</p>
           </ContactInfo>
-        </ContactUs>
-        <SocialMedia>
-          <FooterHeading>Follow Us</FooterHeading>
-          <SocialMediaLink href="https://www.facebook.com/profile.php?id=100076468233609&mibextid=LQQJ4d"><FaFacebook/></SocialMediaLink>
-          
-          <SocialMediaLink href="https://instagram.com/ramlakhan_trust?igshid=MzRlODBiNWFlZA=="><FaInstagram/></SocialMediaLink>
-          
-        </SocialMedia>
+        </FooterSection>
       </FooterContainer>
     </FooterWrapper>
   );

@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import React ,{ useState, useEffect }from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
@@ -19,8 +19,16 @@ const HeroSection = styled.section`
   padding: 100px 0; /* Adjust the padding as needed */
 `;
 
+const HeroImage = styled.img`
+  max-width: 400px; /* Ensure the image doesn't exceed its container */
+  height: 400px; /* Maintain the aspect ratio */
+  display: block; /* Remove any extra spacing */
+  margin: 0 auto; /* Center the image horizontally */
+`;
+
 const PhotoGalleryHeading = styled.h2`
   margin: 25px 0; /* Adjust the margin as needed */
+  text-align: center;
 `;
 
 const CardContainer = styled.div`
@@ -37,41 +45,20 @@ const Card = styled.div`
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
-  
 `;
 
 const CardImage = styled.img`
   max-width: 100%;
   height: auto;
-  
 `;
-const HeroImage = styled.img`
-  max-width: 400px; /* Ensure the image doesn't exceed its container */
-  height: 400px; /* Maintain the aspect ratio */
-  display: block; /* Remove any extra spacing */
-  margin: 0 auto; /* Center the image horizontally */
-`;
+
 const Pic = () => {
   const [imageUrls, setImageUrls] = useState([]);
   const imagelistref = ref(storage, 'gallery/');
 
-  // useEffect(() => {
-  //   listAll(imagelistref)
-  //     .then((response) => {
-  //       response.items.forEach((item) => {
-  //         getDownloadURL(item).then((url) => {
-  //           setImageUrls((prev) => [...prev, url]);
-  //         });
-  //       });
-  //     })
-  //     .catch((error) => {
-  //       console.error('Error fetching image URLs:', error);
-  //     });
-  // }, []); // Add imagelistref to the dependency array
   useEffect(() => {
     listAll(imagelistref)
       .then((response) => {
-        console.log(response);
         const urls = response.items.map((item) => getDownloadURL(item));
         Promise.all(urls)
           .then((urlArray) => {
@@ -86,19 +73,18 @@ const Pic = () => {
       });
   }, []);
 
-
   return (
     <PicWrapper>
       <Navbar />
 
       <HeroSection>
-        <HeroImage />{" "}
-        {/* Replace with your hero image path */}
-        <PhotoGalleryHeading>Photo Gallery</PhotoGalleryHeading>
+        <HeroImage />
       </HeroSection>
 
+      <PhotoGalleryHeading>Photo Gallery</PhotoGalleryHeading>
+
       <CardContainer>
-      {imageUrls.map((imageUrl, index) =>(
+        {imageUrls.map((imageUrl, index) => (
           <Card key={index}>
             <CardImage src={imageUrl} alt={`Project ${index + 1}`} />
           </Card>

@@ -8,11 +8,11 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 const NavbarWrapper = styled.nav`
   background-color: #333;
   color: white;
-  padding: 10px 20px; /* Adjust the padding as needed */
+  padding: 10px 20px;
 `;
 
 const NavContainer = styled.div`
-  width: 100%; /* Adjust the width to make the Navbar full width */
+  width: 100%;
   width: 1000px;
   margin: 0 auto;
   display: flex;
@@ -25,7 +25,7 @@ const NavLinks = styled.div`
   gap: 20px;
 
   @media (max-width: 768px) {
-    display: ${(props) => (props['data-isopen']? 'flex' : 'none')};
+    display: ${(props) => (props['data-isopen'] ? 'flex' : 'none')};
     flex-direction: column;
     position: absolute;
     top: 60px;
@@ -49,10 +49,16 @@ const Dropdown = styled.div`
   position: relative;
   display: inline-block;
   margin-right: 20px;
+  color: white;
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+    margin-right: 0;
+  }
 `;
 
 const DropdownContent = styled.div`
-  display: ${(props) => (props['data-isopen']? 'block' : 'none')};
+  display: ${(props) => (props['data-isopen'] ? 'block' : 'none')};
   position: absolute;
   background-color: #333;
   min-width: 160px;
@@ -73,7 +79,6 @@ const DropdownItem = styled(NavLink)`
 
 const LogoImage = styled.img`
   max-width: 50px; /* Adjust the max-width as needed */
-
 `;
 
 const HamBarIcon = styled.div`
@@ -95,6 +100,7 @@ const Navbar = () => {
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
+    setDropdownOpen(false); // Close dropdown when mobile menu is toggled
   };
 
   return (
@@ -109,13 +115,11 @@ const Navbar = () => {
             Home
           </NavLinkItem>
           <Dropdown>
-           
             <span onClick={toggleDropdown}>About Us</span>
             <DropdownContent data-isopen={isDropdownOpen}>
               <DropdownItem to="/who-are-we">Who Are We</DropdownItem>
               <DropdownItem to="/board-of-directors">Board Of Directors And Members</DropdownItem>
             </DropdownContent>
-            
           </Dropdown>
           <NavLinkItem to="/in-highlights">In-Highlights</NavLinkItem>
           <NavLinkItem to="/pic">Gallery</NavLinkItem>
@@ -125,7 +129,6 @@ const Navbar = () => {
           <NavLinkItem to="/faq">FAQ</NavLinkItem>
         </NavLinks>
       </NavContainer>
-      
     </NavbarWrapper>
   );
 };
