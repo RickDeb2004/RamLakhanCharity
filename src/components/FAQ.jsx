@@ -1,5 +1,5 @@
 // eslint-disable-next-line max-len
-import  { useState } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 import Navbar from './Navbar';
 import Footer from './Footer';
@@ -8,7 +8,6 @@ import { faAngleUp } from '@fortawesome/free-solid-svg-icons';
 
 const FAQContainer = styled.div`
   background-color: #f7f7f7;
-  padding: 20px 0;
 `;
 
 const HeroSection = styled.section`
@@ -18,6 +17,11 @@ const HeroSection = styled.section`
   color: white;
   text-align: center;
   padding: 100px 0;
+
+  /* Adjustments for better responsiveness */
+  @media (max-width: 600px) {
+    padding: 80px 0;
+  }
 `;
 
 const FAQHeading = styled.h2`
@@ -71,8 +75,9 @@ const FAQ = () => {
   return (
     <FAQContainer>
       <Navbar />
-      <HeroSection />
-      <FAQHeading>FAQ</FAQHeading>
+      <HeroSection>
+        <FAQHeading>FAQ</FAQHeading>
+      </HeroSection>
       {faqItems.map((item, index) => (
         <FAQItem key={index}>
           <FAQQuestion onClick={() => toggleFAQ(index)}>
