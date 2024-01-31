@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { ref, getDownloadURL, listAll } from 'firebase/storage';
-import { storage } from '../firbase'; // Import your Firebase storage configuration
+import { storage } from '../firbase'; 
 
 const PicWrapper = styled.div`
   background-color: #f7f7f7;

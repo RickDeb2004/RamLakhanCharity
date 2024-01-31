@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
 import styled from "styled-components";
-import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 
 const FooterWrapper = styled.footer`
   background-color: #333;
@@ -60,7 +60,7 @@ const Footer = () => {
           <QuickLinkItem href="/home">Home</QuickLinkItem>
           <QuickLinkItem href="/about">About Us</QuickLinkItem>
           <QuickLinkItem href="/in-highlights">In-Highlights</QuickLinkItem>
-          <QuickLinkItem href="/pic">Pic</QuickLinkItem>
+          <QuickLinkItem href="/pic">Gallery</QuickLinkItem>
           <QuickLinkItem href="/media">Media</QuickLinkItem>
           <QuickLinkItem href="/contact">Contact</QuickLinkItem>
           <QuickLinkItem href="/doctor-profile">Doctors Profile</QuickLinkItem>

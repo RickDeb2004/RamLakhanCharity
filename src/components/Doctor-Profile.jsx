@@ -18,10 +18,6 @@ const HeroSection = styled.section`
   padding: 100px 0;
 `;
 
-// const HeroText = styled.div`
-//   max-width: 800px;
-//   margin: 0 auto;
-// `;
 
 const DoctorCardsContainer = styled.div`
   display: flex;
@@ -49,6 +45,7 @@ const DoctorImage = styled.img`
 
 const Description = styled.p`
   font-weight: bold;
+  white-space: pre-line;
 `;
 
 const ViewMoreLink = styled(Link)`
@@ -61,15 +58,15 @@ const DoctorProfile = () => {
   const [doctorsData, setDoctorsData] = useState([]);
 
   useEffect(() => {
-    const imagelistref = ref(storage, "doctors-profile/"); // Replace with the correct storage path
+    const imagelistref = ref(storage, "doctors-profile/");
 
     listAll(imagelistref)
       .then((response) => {
         const fetchDoctorsData = response.items.map((item) =>
           getDownloadURL(item).then((url) => ({
             image: url,
-            description: getDoctorDescription(item.name), // Fetch descriptions based on the item's name
-            id: item.name, // Use a unique identifier, for example, the file name
+            description: getDoctorDescription(item.name),
+            id: item.name,
           }))
         );
 
@@ -87,13 +84,19 @@ const DoctorProfile = () => {
   }, []);
 
   const getDoctorDescription = (name) => {
-    if (name === "IMG-20230925-WA0018.jpg") {
-      return "Description for Doctor 1";
-    } else if (name === "doctor2.jpg") {
-      return "Description for Doctor 2";
+    const regex = /([^_]+)_([^_]+)\.jpg/i;
+    const match = name.match(regex);
+
+    if (match && match.length === 3) {
+      const firstName = capitalizeFirstLetter(match[1]);
+      const lastName = capitalizeFirstLetter(match[2]);
+      return `${firstName}\n${lastName}`;
     }
 
     return "Default description";
+  };
+  const capitalizeFirstLetter = (str) => {
+    return str.charAt(0).toUpperCase() + str.slice(1);
   };
 
   return (

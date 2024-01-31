@@ -47,14 +47,6 @@ const Row = styled.div`
   margin-top: 30px;
 `;
 
-const Content = styled.div`
-  flex: 75%; /* 75% of the row */
-
-  @media (max-width: 768px) {
-    flex: 100%; 
-  }
-`;
-
 const ProjectCard = styled.div`
   flex: 25%; /* 25% of the row */
   background-color: #fff;
@@ -72,7 +64,7 @@ const ProjectCardHeading = styled.h3`
   font-weight: 600;
   margin-bottom: 10px;
 
-  @media(max-width:768px){
+  @media (max-width: 768px) {
     font-size: 1.5rem;
   }
 `;
@@ -80,7 +72,7 @@ const ProjectCardHeading = styled.h3`
 const ProjectCardContent = styled.p`
   font-weight: 400;
 
-  @media(max-width:768px){
+  @media (max-width: 768px) {
     font-size: 1.2rem;
   }
 `;
