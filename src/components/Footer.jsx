@@ -80,10 +80,16 @@ const Footer = () => {
         <FooterSection>
           <FooterHeading>Contact Us</FooterHeading>
           <ContactInfo>
-            <p>123 Main Street</p>
-            <p>City, Country</p>
-            <p>Phone: +123 456 789</p>
-            <p>Email: example@example.com</p>
+            <p>
+              Address: Ramlakhan Trust , Near AJY Bricks , Dorwa , Meja ,
+              Prayagraj
+            </p>
+            <p>Prayagraj,INDIA</p>
+            <p>PIN CODE:212305 </p>
+
+            <p>Phone:+91 7570068400</p>
+            <p>Alternate Phone: +91 9369111102</p>
+            <p>Email:ramlakhancharitabletrust@gmail.com</p>
           </ContactInfo>
         </FooterSection>
       </FooterContainer>

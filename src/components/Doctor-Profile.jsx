@@ -18,7 +18,6 @@ const HeroSection = styled.section`
   padding: 100px 0;
 `;
 
-
 const DoctorCardsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -84,17 +83,19 @@ const DoctorProfile = () => {
   }, []);
 
   const getDoctorDescription = (name) => {
-    const regex = /([^_]+)_([^_]+)\.jpg/i;
+    const regex = /(\d+)?_([^_]+)_([^_]+)_([^_]+)?\.jpg/i;
     const match = name.match(regex);
 
-    if (match && match.length === 3) {
-      const firstName = capitalizeFirstLetter(match[1]);
-      const lastName = capitalizeFirstLetter(match[2]);
-      return `${firstName}\n${lastName}`;
+    if (match && match.length >= 3) {
+      const firstName = capitalizeFirstLetter(match[2]);
+      const lastName = capitalizeFirstLetter(match[3]);
+      const degree = match[4] ? `${match[4]}` : ""; // Display degree only if it exists
+      return `${firstName}\n${lastName}\n${degree}`;
     }
 
     return "Default description";
   };
+
   const capitalizeFirstLetter = (str) => {
     return str.charAt(0).toUpperCase() + str.slice(1);
   };
