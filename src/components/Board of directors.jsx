@@ -92,7 +92,11 @@ const BoardOfDirectors = () => {
       <CardContainer>
         {directorsData.map((director) => (
           <Card key={director.id}>
-            <CardImage src={director.image} alt={director.name} />
+            <CardImage
+              src={director.image}
+              alt={director.name}
+              loading="lazy"
+            />
             <h3>{director.name}</h3>
             <CardDescription>{director.description}</CardDescription>
           </Card>

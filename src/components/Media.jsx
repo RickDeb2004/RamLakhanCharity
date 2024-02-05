@@ -84,7 +84,12 @@ const Media = () => {
       <MediaContainer>
         {videoUrls.map((videoUrl, index) => (
           <MediaCard key={index}>
-            <MediaVideo controls src={videoUrl} alt={`Project ${index + 1}`} />
+            <MediaVideo
+              controls
+              src={videoUrl}
+              alt={`Project ${index + 1}`}
+              loading="lazy"
+            />
 
             <Description>Description 1</Description>
           </MediaCard>

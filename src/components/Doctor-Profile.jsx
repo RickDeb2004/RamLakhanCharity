@@ -108,7 +108,11 @@ const DoctorProfile = () => {
       <DoctorCardsContainer>
         {doctorsData.map((doctor) => (
           <DoctorCard key={doctor.id}>
-            <DoctorImage src={doctor.image} alt={`Dr. ${doctor.id}`} />
+            <DoctorImage
+              src={doctor.image}
+              alt={`Dr. ${doctor.id}`}
+              loading="lazy"
+            />
             <Description>{doctor.description}</Description>
             <ViewMoreLink to={`/doctor-profile/${doctor.id}`}>
               View More

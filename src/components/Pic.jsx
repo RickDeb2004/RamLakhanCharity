@@ -3,8 +3,8 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import { ref, getDownloadURL, listAll } from 'firebase/storage';
-import { storage } from '../firbase'; 
+import { ref, getDownloadURL, listAll } from "firebase/storage";
+import { storage } from "../firbase";
 
 const PicWrapper = styled.div`
   background-color: #f7f7f7;
@@ -54,7 +54,7 @@ const CardImage = styled.img`
 
 const Pic = () => {
   const [imageUrls, setImageUrls] = useState([]);
-  const imagelistref = ref(storage, 'gallery/');
+  const imagelistref = ref(storage, "gallery/");
 
   useEffect(() => {
     listAll(imagelistref)
@@ -65,11 +65,11 @@ const Pic = () => {
             setImageUrls(urlArray);
           })
           .catch((error) => {
-            console.error('Error fetching image URLs:', error);
+            console.error("Error fetching image URLs:", error);
           });
       })
       .catch((error) => {
-        console.error('Error listing images:', error);
+        console.error("Error listing images:", error);
       });
   }, []);
 
@@ -86,7 +86,11 @@ const Pic = () => {
       <CardContainer>
         {imageUrls.map((imageUrl, index) => (
           <Card key={index}>
-            <CardImage src={imageUrl} alt={`Project ${index + 1}`} />
+            <CardImage
+              src={imageUrl}
+              alt={`Project ${index + 1}`}
+              loading="lazy"
+            />
           </Card>
         ))}
       </CardContainer>
