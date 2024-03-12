@@ -50,7 +50,7 @@ const ExpandArrow = styled.div`
   font-size: 24px;
 `;
 
-const FAQ = () => {
+const Faq = () => {
   const [faqItems, setFAQItems] = useState([
     {
       question: "Who are we?",
@@ -98,4 +98,4 @@ const FAQ = () => {
   );
 };
 
-export default FAQ;
+export default Faq;

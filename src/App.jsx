@@ -11,17 +11,15 @@ import Pic from "./components/Pic";
 import WhoAreWe from "./components/Who are we";
 import BoardOfDirectors from "./components/Board of directors";
 import InHighlights from "./components/InHighlights";
-import FAQ from "./components/Faq";
+import Faq from "./components/Faq";
 const App = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
- 
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000); 
+    }, 2000);
 
-    
     return () => clearTimeout(timer);
   }, []);
   return (
@@ -43,12 +41,9 @@ const App = () => {
     // </Router>
     <Router>
       <Routes>
-      
         {loading ? (
-         
           <Route path="/*" element={<Loader />} />
         ) : (
-          
           <>
             <Route path="/home" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -59,7 +54,7 @@ const App = () => {
             <Route path="/who-are-we" element={<WhoAreWe />} />
             <Route path="/board-of-directors" element={<BoardOfDirectors />} />
             <Route path="/in-highlights" element={<InHighlights />} />
-            <Route path="/faq" element={<FAQ />} />
+            <Route path="/faq" element={<Faq />} />
           </>
         )}
       </Routes>
