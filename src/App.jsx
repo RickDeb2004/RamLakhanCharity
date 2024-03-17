@@ -11,7 +11,7 @@ import Pic from "./components/Pic";
 import WhoAreWe from "./components/Who are we";
 import BoardOfDirectors from "./components/Board of directors";
 import InHighlights from "./components/InHighlights";
-import Faq from "./components/Faq";
+// import Faq from "./components/Faq";
 const App = () => {
   const [loading, setLoading] = useState(true);
 
@@ -45,7 +45,7 @@ const App = () => {
           <Route path="/*" element={<Loader />} />
         ) : (
           <>
-            <Route path="/home" element={<Home />} />
+            <Route path="/*" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/media" element={<Media />} />
             <Route path="/doctor-profile" element={<DoctorProfile />} />
@@ -54,7 +54,7 @@ const App = () => {
             <Route path="/who-are-we" element={<WhoAreWe />} />
             <Route path="/board-of-directors" element={<BoardOfDirectors />} />
             <Route path="/in-highlights" element={<InHighlights />} />
-            <Route path="/faq" element={<Faq />} />
+            {/* <Route path="/faq" element={<Faq />} /> */}
           </>
         )}
       </Routes>
