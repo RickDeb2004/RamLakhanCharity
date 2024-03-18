@@ -9,7 +9,7 @@ const LoaderContainer = styled.div`
 
 const Loader = () => (
   <LoaderContainer>
-    <img src="src\components\images\logo (1).png" alt="Logo" />
+    <img src="images\logo (1).png" alt="Logo" />
     <div>Loading...</div>
   </LoaderContainer>
 );

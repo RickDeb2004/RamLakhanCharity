@@ -7,11 +7,11 @@ import Footer from "./Footer";
 const WhoAreWeWrapper = styled.div`
   font-family: "Roboto", sans-serif;
   background-color: #f7f7f7;
-  background-image: url("src/components/images/hmn11.jpg");
+  background-image: url("");
 `;
 
 const HeroSection = styled.section`
-  background-image: url("src/components/images/DSC06815.JPG"); /* Replace with your hero image path */
+  background-image: url("images/DSC06815.JPG"); /* Replace with your hero image path */
   background-size: cover;
   background-position: center;
   color: white;

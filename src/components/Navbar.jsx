@@ -109,7 +109,7 @@ const Navbar = () => {
         <HamBarIcon onClick={toggleMobileMenu}>
           <FontAwesomeIcon icon={faBars} />
         </HamBarIcon>
-        <LogoImage src="src\components\images\logo (1).png" alt="Your Logo" />
+        <LogoImage src="images/logo (1).png" alt="Your Logo" />
         <NavLinks data-isopen={isMobileMenuOpen}>
           <NavLinkItem exact='true' to="/home">
             Home
