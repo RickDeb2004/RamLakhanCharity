@@ -89,31 +89,31 @@ const Home = () => {
           >
             <div>
               <CarouselImage
-                src="src/components/images/DSC06815.JPG"
+                src="images/DSC06815.JPG"
                 alt="Image 1"
               />
             </div>
             <div>
               <CarouselImage
-                src="src/components/images/C46B9FDC-A2EE-4CF8-9FD5-6D875E8E3034.JPEG"
+                src="images/C46B9FDC-A2EE-4CF8-9FD5-6D875E8E3034.JPEG"
                 alt="Image 2"
               />
             </div>
             <div>
               <CarouselImage
-                src="src/components/images/IMG_5066.JPG"
+                src="images/IMG_5066.JPG"
                 alt="Image 3"
               />
             </div>
             <div>
               <CarouselImage
-                src="src/components/images/IMG_5058.JPG"
+                src="images/IMG_5058.JPG"
                 alt="Image 4"
               />
             </div>
             <div>
               <CarouselImage
-                src="src/components/images/IMG_5068.JPG"
+                src="images/IMG_5068.JPG"
                 alt="Image 5"
               />
             </div>
@@ -133,7 +133,7 @@ const Home = () => {
         </Paragraph>
       </ContentSection>
       <CircleCard>
-        <CircleImage src="src\components\images\guruji.jpg" alt="Guru Kripa" />
+        <CircleImage src="images\guruji.jpg" alt="Guru Kripa" />
         <CircleText>Guru Kripa</CircleText>
       </CircleCard>
 

@@ -11,7 +11,7 @@ const PicWrapper = styled.div`
 `;
 
 const HeroSection = styled.section`
-  background-image: url("src/components/images/DSC06815.JPG"); /* Replace with your hero image path */
+  background-image: url("images/DSC06815.JPG"); /* Replace with your hero image path */
   background-size: cover;
   background-position: center;
   color: white;
