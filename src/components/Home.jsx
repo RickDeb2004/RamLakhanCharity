@@ -88,10 +88,7 @@ const Home = () => {
             interval={3000}
           >
             <div>
-              <CarouselImage
-                src="images/DSC06815.JPG"
-                alt="Image 1"
-              />
+              <CarouselImage src="images/DSC06815.JPG" alt="Image 1" />
             </div>
             <div>
               <CarouselImage
@@ -100,22 +97,13 @@ const Home = () => {
               />
             </div>
             <div>
-              <CarouselImage
-                src="images/IMG_5066.JPG"
-                alt="Image 3"
-              />
+              <CarouselImage src="images/IMG_5066.JPG" alt="Image 3" />
             </div>
             <div>
-              <CarouselImage
-                src="images/IMG_5058.JPG"
-                alt="Image 4"
-              />
+              <CarouselImage src="images/IMG_5058.JPG" alt="Image 4" />
             </div>
             <div>
-              <CarouselImage
-                src="images/IMG_5068.JPG"
-                alt="Image 5"
-              />
+              <CarouselImage src="images/IMG_5068.JPG" alt="Image 5" />
             </div>
           </Carousel>
         </CarouselContainer>
@@ -124,12 +112,8 @@ const Home = () => {
       <ContentSection>
         <Heading2>Welcome to Our Website</Heading2>
         <Paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique
-          urna eu libero fringilla, eget suscipit libero vehicula.
-        </Paragraph>
-        <Paragraph>
-          Integer euismod, mi eu congue bibendum, justo ante cursus arcu, quis
-          ultrices nunc odio et ex.
+          Enter a realm of compassionate care, where healthcare transforms lives
+          and nurtures wellbeing.
         </Paragraph>
       </ContentSection>
       <CircleCard>
