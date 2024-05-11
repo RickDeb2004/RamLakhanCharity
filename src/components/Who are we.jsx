@@ -95,8 +95,12 @@ const WhoAreWe = () => {
 
       <ContentSection>
         <Paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique
-          urna eu libero fringilla, eget suscipit libero vehicula.
+          The primary motive of the trust is to uplift underprivileged
+          individuals through education, healthcare, and social support, aiming
+          to enhance their quality of life and contribute to societal welfare.
+          Through holistic initiatives spanning education, healthcare, and
+          social welfare, the trust endeavors to create a more equitable and
+          empowered community, fostering a brighter future for all.
         </Paragraph>
         {/* Additional content */}
       </ContentSection>
