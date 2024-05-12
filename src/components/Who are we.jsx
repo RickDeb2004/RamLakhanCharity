@@ -24,8 +24,8 @@ const HeroSection = styled.section`
 `;
 
 const HeroImage = styled.img`
-  max-width: 400px; /* Ensure the image doesn't exceed its container */
-  height: 400px; /* Maintain the aspect ratio */
+  width: 100%; /* Ensure the image doesn't exceed its container */
+  height: 100%; /* Maintain the aspect ratio */
   display: block; /* Remove any extra spacing */
   margin: 0 auto; /* Center the image horizontally */
 `;
@@ -57,7 +57,8 @@ const ProjectCard = styled.div`
   text-align: center;
   margin-bottom: 20px;
   @media (max-width: 768px) {
-    padding: 20px;
+    flex:100%;
+    margin-bottom: 20px;
 `;
 
 const ProjectCardHeading = styled.h3`
@@ -81,6 +82,11 @@ const ContentGrid = styled.div`
   display: grid;
   grid-template-columns: 75% 25%;
   gap: 20px;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 const Paragraph = styled.div`
   font-weight: 500;
@@ -131,8 +137,11 @@ const WhoAreWe = () => {
           <ProjectCard style={{ flex: "25%" }}>
             <ProjectCardHeading>Our Values</ProjectCardHeading>
             <ProjectCardContent>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-              tristique urna eu libero fringilla, eget suscipit libero vehicula.
+              At our core, we are driven by integrity, compassion, and
+              inclusivity. We believe in fostering a sense of belonging and
+              empowerment within our community. With a commitment to
+              transparency and ethical practices, we strive to create lasting
+              impact through collaboration and empathy
             </ProjectCardContent>
           </ProjectCard>
         </ContentGrid>

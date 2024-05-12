@@ -17,6 +17,10 @@ const HeroSection = styled.section`
   color: white;
   text-align: center;
   padding: 100px 0; /* Adjust the padding as needed */
+
+  @media (max-width: 768px) {
+    background-size: cover;
+  }
 `;
 
 const HeroImage = styled.img`
@@ -24,6 +28,11 @@ const HeroImage = styled.img`
   height: 400px; /* Maintain the aspect ratio */
   display: block; /* Remove any extra spacing */
   margin: 0 auto; /* Center the image horizontally */
+
+  @media (max-width: 768px) {
+    max-width: 100px;
+    height: 50px;
+  }
 `;
 
 const PhotoGalleryHeading = styled.h2`

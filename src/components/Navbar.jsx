@@ -13,11 +13,14 @@ const NavbarWrapper = styled.nav`
 
 const NavContainer = styled.div`
   width: 100%;
-  width: 1000px;
+
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: 768px) {
+    justify-content: space-between;
+  }
 `;
 
 const NavLinks = styled.div`
@@ -33,6 +36,8 @@ const NavLinks = styled.div`
     background-color: #333;
     padding: 10px;
     width: 100%;
+    flex-grow: 1;
+    z-index: 100;
   }
 `;
 
@@ -40,8 +45,13 @@ const NavLinkItem = styled(NavLink)`
   text-decoration: none;
   color: white;
   font-weight: bold;
+
   &.active {
     border-bottom: 2px solid white;
+  }
+
+  @media (max-width: 768px) {
+    z-index: 100;
   }
 `;
 
@@ -78,12 +88,19 @@ const DropdownItem = styled(NavLink)`
 `;
 
 const LogoImage = styled.img`
-  max-width: 50px; /* Adjust the max-width as needed */
+  max-width: 50vw; /* Adjust the max-width as needed */
+  @media (max-width: 768px) {
+    max-width: 15vw;
+  }
 `;
 
 const HamBarIcon = styled.div`
   display: none;
   cursor: pointer;
+  z-index: ${(props) =>
+    props["data-isopen"]
+      ? "500"
+      : "1"}; /* Set a high z-index when the mobile menu is open */
 
   @media (max-width: 768px) {
     display: block;
@@ -106,7 +123,7 @@ const Navbar = () => {
   return (
     <NavbarWrapper>
       <NavContainer>
-        <HamBarIcon onClick={toggleMobileMenu}>
+        <HamBarIcon onClick={toggleMobileMenu} data-isopen={isMobileMenuOpen}>
           <FontAwesomeIcon icon={faBars} />
         </HamBarIcon>
         <LogoImage src="images/logo (1).png" alt="Your Logo" />

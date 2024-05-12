@@ -16,6 +16,7 @@ const HeroSection = styled.section`
   color: white;
   text-align: center;
   padding: 100px 0;
+  width: 100%;
 `;
 
 const DoctorCardsContainer = styled.div`
@@ -24,6 +25,11 @@ const DoctorCardsContainer = styled.div`
   justify-content: space-between;
   gap: 20px;
   padding: 20px 0;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    justify-content: center;
+  }
 `;
 
 const DoctorCard = styled.div`
@@ -33,10 +39,15 @@ const DoctorCard = styled.div`
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+
+  @media (max-width:768px){
+    flex: 0 0 calc(33.333% - 20px)
+    margin-bottom: 20px;
+  }
 `;
 
 const DoctorImage = styled.img`
-  width: 300px;
+  width: 100%;
   height: 300px;
   object-fit: cover;
   border-radius: 10px;

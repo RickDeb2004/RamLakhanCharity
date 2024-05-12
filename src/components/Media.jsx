@@ -11,17 +11,12 @@ const MediaWrapper = styled.div`
 `;
 
 const HeroSection = styled.section`
-  background-image: url("src/components/images/DSC06815.JPG"); /* Replace with your hero image */
+  background-image: url("images/DSC06815.JPG"); /* Replace with your hero image */
   background-size: cover;
   background-position: center;
   color: white;
   text-align: center;
   padding: 100px 0; /* Adjust the padding as needed */
-`;
-
-const HeroText = styled.div`
-  max-width: 800px;
-  margin: 0 auto;
 `;
 
 const MediaContainer = styled.div`
@@ -30,6 +25,11 @@ const MediaContainer = styled.div`
   justify-content: space-between;
   gap: 20px;
   padding: 20px 0; /* Adjust the padding as needed */
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    justify-content: center;
+  }
 `;
 
 const MediaCard = styled.div`
@@ -39,15 +39,15 @@ const MediaCard = styled.div`
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   text-align: center;
+  @media (max-width:768px){
+    flex: 0 0 calc(33.333% - 20px)
+    margin-bottom: 20px;
+  }
 `;
 
 const MediaVideo = styled.video`
   max-width: 100%;
   height: 500px;
-`;
-
-const Description = styled.p`
-  font-weight: bold;
 `;
 
 const Media = () => {
@@ -74,12 +74,7 @@ const Media = () => {
   return (
     <MediaWrapper>
       <Navbar />
-      <HeroSection>
-        <HeroText>
-          <h1>Media</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </HeroText>
-      </HeroSection>
+      <HeroSection></HeroSection>
 
       <MediaContainer>
         {videoUrls.map((videoUrl, index) => (
@@ -90,8 +85,6 @@ const Media = () => {
               alt={`Project ${index + 1}`}
               loading="lazy"
             />
-
-            <Description>Description 1</Description>
           </MediaCard>
         ))}
       </MediaContainer>
