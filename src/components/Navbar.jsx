@@ -64,6 +64,7 @@ const Dropdown = styled.div`
 
   @media (max-width: 768px) {
     margin-right: 0;
+    z-index: 1000;
   }
 `;
 
@@ -72,9 +73,13 @@ const DropdownContent = styled.div`
   position: absolute;
   background-color: #333;
   min-width: 160px;
-  z-index: 1;
+  z-index: 100;
   top: 100%;
   left: 0;
+  @media (max-width: 768px) {
+    margin-right: 0;
+    z-index: 1000;
+  }
 `;
 
 const DropdownItem = styled(NavLink)`
@@ -84,6 +89,10 @@ const DropdownItem = styled(NavLink)`
   color: white;
   &:hover {
     background-color: #555;
+  }
+  @media (max-width: 768px) {
+    margin-right: 0;
+    z-index: 1000;
   }
 `;
 
@@ -143,9 +152,9 @@ const Navbar = () => {
           <NavLinkItem to="/in-highlights">In-Highlights</NavLinkItem>
           <NavLinkItem to="/pic">Gallery</NavLinkItem>
           <NavLinkItem to="/media">Media</NavLinkItem>
-          <NavLinkItem to="/contact">Contact</NavLinkItem>
           <NavLinkItem to="/doctor-profile">Doctors-profile</NavLinkItem>
           <NavLinkItem to="/faq">FAQ</NavLinkItem>
+          <NavLinkItem to="/contact">Contact</NavLinkItem>
         </NavLinks>
         <NavLinkItem to="#" className="font-bold">
           ESTD:2021

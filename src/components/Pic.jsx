@@ -7,7 +7,7 @@ import { ref, getDownloadURL, listAll } from "firebase/storage";
 import { storage } from "../firbase";
 
 const PicWrapper = styled.div`
-  background-color: #f7f7f7;
+  background: linear-gradient(135deg, #fffdd0, #faf9f6);
 `;
 
 const HeroSection = styled.section`
@@ -48,7 +48,7 @@ const CardContainer = styled.div`
 `;
 
 const Card = styled.div`
-  background-color: #fff;
+  background: linear-gradient(135deg, #ecd06f, #fff3e0);
   border: 1px solid #ccc;
   padding: 10px;
   border-radius: 4px;

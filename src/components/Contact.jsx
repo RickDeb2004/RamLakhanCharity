@@ -1,18 +1,17 @@
 // eslint-disable-next-line no-unused-vars
-import React,{useState} from 'react';
-import styled from 'styled-components';
-import Navbar from './Navbar';
-import Footer from './Footer';
-import {  collection, addDoc } from 'firebase/firestore';
-import { db } from '../firbase';
+import React, { useState } from "react";
+import styled from "styled-components";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "../firbase";
 
 const ContactWrapper = styled.div`
-  background-color: #f7f7f7;
-  background-image:url('src/components/images/hmn11.jpg')
+  background: linear-gradient(135deg, #fffdd0, #faf9f6);
 `;
 
 const HeroSection = styled.section`
-  background-image: url('src/components/images/DSC06815.JPG'); /* Replace with your background image path */
+  background-image: url("src/components/images/DSC06815.JPG"); /* Replace with your background image path */
   background-size: cover;
   background-position: center;
   color: grey;
@@ -45,6 +44,7 @@ const Input = styled.input`
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  background: linear-gradient(-135deg, #f9efaf, #f7a73e);
 `;
 
 const TextArea = styled.textarea`
@@ -53,11 +53,12 @@ const TextArea = styled.textarea`
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  background: linear-gradient(-135deg, #f9efaf, #f7a73e);
 `;
 
 const SubmitButton = styled.button`
-  background-color: #333;
-  color: white;
+  background: linear-gradient(135deg, #ecd06f, #ffa500);
+  color: black;
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
@@ -66,11 +67,11 @@ const SubmitButton = styled.button`
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    phone: '',
-    message: '',
+    name: "",
+    email: "",
+    subject: "",
+    phone: "",
+    message: "",
   });
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -83,22 +84,21 @@ const Contact = () => {
     e.preventDefault();
 
     try {
-      const docRef = await addDoc(collection(db, 'contacts'), {
+      const docRef = await addDoc(collection(db, "contacts"), {
         ...formData,
       });
 
-      console.log('Document written with ID: ', docRef.id);
+      console.log("Document written with ID: ", docRef.id);
 
-      
       setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        phone: '',
-        message: '',
+        name: "",
+        email: "",
+        subject: "",
+        phone: "",
+        message: "",
       });
     } catch (error) {
-      console.error('Error adding document: ', error);
+      console.error("Error adding document: ", error);
     }
   };
   return (
@@ -113,28 +113,52 @@ const Contact = () => {
         <ContactForm onSubmit={handleSubmit}>
           <FormField>
             <Label>Contact Name</Label>
-            <Input type="text" name="name" value={formData.name} onChange={handleChange} />
+            <Input
+              type="text"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+            />
           </FormField>
           <FormField>
             <Label>Email</Label>
-            <Input type="email" name="email" value={formData.email} onChange={handleChange} />
+            <Input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+            />
           </FormField>
           <FormField>
             <Label>Subject</Label>
-            <Input type="text" name="subject" value={formData.subject} onChange={handleChange} />
+            <Input
+              type="text"
+              name="subject"
+              value={formData.subject}
+              onChange={handleChange}
+            />
           </FormField>
           <FormField>
             <Label>Phone Number</Label>
-            <Input type="tel" name="phone" value={formData.phone} onChange={handleChange}/>
+            <Input
+              type="tel"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+            />
           </FormField>
           <FormField>
             <Label>Message</Label>
-            <TextArea name="message" value={formData.message} onChange={handleChange}></TextArea>
+            <TextArea
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+            ></TextArea>
           </FormField>
           <SubmitButton type="submit">Submit</SubmitButton>
         </ContactForm>
       </FormSection>
-        <Footer />
+      <Footer />
     </ContactWrapper>
   );
 };

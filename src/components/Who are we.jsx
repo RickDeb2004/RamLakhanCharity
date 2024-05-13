@@ -8,6 +8,7 @@ const WhoAreWeWrapper = styled.div`
   font-family: "Roboto", sans-serif;
   background-color: #f7f7f7;
   background-image: url("");
+  background: linear-gradient(135deg, #fffdd0, #faf9f6);
 `;
 
 const HeroSection = styled.section`
@@ -24,12 +25,16 @@ const HeroSection = styled.section`
 `;
 
 const HeroImage = styled.img`
-  width: 100%; /* Ensure the image doesn't exceed its container */
-  height: 100%; /* Maintain the aspect ratio */
+  max-width: 400px; /* Ensure the image doesn't exceed its container */
+  height: 400px; /* Maintain the aspect ratio */
   display: block; /* Remove any extra spacing */
   margin: 0 auto; /* Center the image horizontally */
-`;
 
+  @media (max-width: 768px) {
+    max-width: 100px;
+    height: 50px;
+  }
+`;
 const ContentSection = styled.section`
   padding: 50px 0; /* Adjust the padding as needed */
   text-align: center;
@@ -55,6 +60,7 @@ const ProjectCard = styled.div`
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
+  background: linear-gradient(135deg, #ECD06F, #fff3e0);
   margin-bottom: 20px;
   @media (max-width: 768px) {
     flex:100%;

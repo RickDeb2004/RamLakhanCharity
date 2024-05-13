@@ -6,7 +6,7 @@ import { ref, getDownloadURL, listAll } from "firebase/storage";
 import { storage } from "../firbase";
 
 const InHighlightsWrapper = styled.div`
-  background-color: #f7f7f7;
+  background: linear-gradient(135deg, #fffdd0, #faf9f6);
 `;
 
 const HeroSection = styled.section`
@@ -52,7 +52,7 @@ const ProjectCard = styled.div`
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
-
+  background: linear-gradient(135deg, #ECD06F, #fff3e0);
   @media (max-width:768px){
     flex-direction: column;
     justify-content: center

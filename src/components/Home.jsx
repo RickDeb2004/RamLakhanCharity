@@ -13,7 +13,7 @@ const HomeContainer = styled.div`
   flex-direction: column;
   min-height: 100vh; /* Ensure the container takes at least the full viewport height */
   width: 100vw;
-  background-image: url("");
+  background: linear-gradient(135deg, #fffdd0, #faf9f6);
 `;
 
 const HeroSection = styled.section`
@@ -22,7 +22,7 @@ const HeroSection = styled.section`
   justify-content: center;
   align-items: center;
   padding: 10px 0; /* Adjust the padding as needed */
-
+  background: linear-gradient(135deg, #ecd06f, #fff3e0);
   /* Responsive styles for small screens (phones) */
   @media (max-width: 600px) {
     padding: 20px 0;
@@ -33,6 +33,7 @@ const CarouselContainer = styled.div`
   width: 100%;
   z-index: 0;
   position: relative;
+  background: linear-gradient(135deg, #ecd06f, #fff3e0);
   /* Adjust the width as needed */
   margin: 0 auto;
 `;
@@ -46,6 +47,7 @@ const CarouselImage = styled.img`
   width: 100%;
   height: auto;
   object-fit: cover; /* Maintain aspect ratio and cover container */
+  background: linear-gradient(135deg, #ecd06f, #fff3e0);
 `;
 
 const CircleCard = styled.div`

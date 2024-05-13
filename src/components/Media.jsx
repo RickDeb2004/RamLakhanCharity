@@ -8,6 +8,7 @@ import { storage } from "../firbase";
 
 const MediaWrapper = styled.div`
   padding: 20px; /* Adjust the padding as needed */
+  background: linear-gradient(135deg, #FFFDD0, #FAF9F6);
 `;
 
 const HeroSection = styled.section`
@@ -17,6 +18,18 @@ const HeroSection = styled.section`
   color: white;
   text-align: center;
   padding: 100px 0; /* Adjust the padding as needed */
+`;
+
+const HeroImage = styled.img`
+  max-width: 400px; /* Ensure the image doesn't exceed its container */
+  height: 400px; /* Maintain the aspect ratio */
+  display: block; /* Remove any extra spacing */
+  margin: 0 auto; /* Center the image horizontally */
+
+  @media (max-width: 768px) {
+    max-width: 100px;
+    height: 50px;
+  }
 `;
 
 const MediaContainer = styled.div`
@@ -34,7 +47,7 @@ const MediaContainer = styled.div`
 
 const MediaCard = styled.div`
   flex: 1;
-  background-color: #f4f4f4;
+  background: linear-gradient(135deg, #ECD06F, #fff3e0);
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -74,7 +87,9 @@ const Media = () => {
   return (
     <MediaWrapper>
       <Navbar />
-      <HeroSection></HeroSection>
+      <HeroSection>
+        <HeroImage  />
+      </HeroSection>
 
       <MediaContainer>
         {videoUrls.map((videoUrl, index) => (
