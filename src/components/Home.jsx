@@ -12,7 +12,7 @@ const HomeContainer = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh; /* Ensure the container takes at least the full viewport height */
-  width: 100vw;
+
   background: linear-gradient(135deg, #fffdd0, #faf9f6);
 `;
 
@@ -100,22 +100,34 @@ const Home = () => {
                 interval={3000}
               >
                 <div>
-                  <CarouselImage src="images/DSC06815.JPG" alt="Image 1" />
+                  <CarouselImage
+                    src="https://res.cloudinary.com/dkkuaymml/image/upload/v1715872104/C46B9FDC-A2EE-4CF8-9FD5-6D875E8E3034_awetvo.jpg"
+                    alt="Image 1"
+                  />
                 </div>
                 <div>
                   <CarouselImage
-                    src="images/C46B9FDC-A2EE-4CF8-9FD5-6D875E8E3034.JPEG"
+                    src="https://res.cloudinary.com/dkkuaymml/image/upload/v1715872456/IMG_5058_nv3e5d.jpg"
                     alt="Image 2"
                   />
                 </div>
                 <div>
-                  <CarouselImage src="images/IMG_5066.JPG" alt="Image 3" />
+                  <CarouselImage
+                    src="https://res.cloudinary.com/dkkuaymml/image/upload/v1716103756/IMG_5066_jzx52z.jpg"
+                    alt="Image 3"
+                  />
                 </div>
                 <div>
-                  <CarouselImage src="images/IMG_5058.JPG" alt="Image 4" />
+                  <CarouselImage
+                    src="https://res.cloudinary.com/dkkuaymml/image/upload/v1716103861/IMG_5068_ukkr79.jpg"
+                    alt="Image 4"
+                  />
                 </div>
                 <div>
-                  <CarouselImage src="images/IMG_5068.JPG" alt="Image 5" />
+                  <CarouselImage
+                    src="https://res.cloudinary.com/dkkuaymml/image/upload/v1715872104/C46B9FDC-A2EE-4CF8-9FD5-6D875E8E3034_awetvo.jpg"
+                    alt="Image 5"
+                  />
                 </div>
               </Carousel>
             </CarouselContainer>
@@ -129,7 +141,10 @@ const Home = () => {
             </Paragraph>
           </ContentSection>
           <CircleCard>
-            <CircleImage src="images\guruji.jpg" alt="Guru Kripa" />
+            <CircleImage
+              src="https://res.cloudinary.com/dkkuaymml/image/upload/v1716103911/guruji_tyijeq.jpg"
+              alt="Guru Kripa"
+            />
             <CircleText>Guru Kripa</CircleText>
           </CircleCard>
           <Footer />

@@ -135,7 +135,10 @@ const Navbar = () => {
         <HamBarIcon onClick={toggleMobileMenu} data-isopen={isMobileMenuOpen}>
           <FontAwesomeIcon icon={faBars} />
         </HamBarIcon>
-        <LogoImage src="images/logo (1).png" alt="Your Logo" />
+        <LogoImage
+          src="https://res.cloudinary.com/dkkuaymml/image/upload/v1716103952/logo_1_cb3pgi.png"
+          alt="Your Logo"
+        />
         <NavLinks data-isopen={isMobileMenuOpen}>
           <NavLinkItem exact="true" to="/home">
             Home
