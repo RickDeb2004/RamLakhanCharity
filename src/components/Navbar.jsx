@@ -13,11 +13,14 @@ const NavbarWrapper = styled.nav`
 
 const NavContainer = styled.div`
   width: 100%;
-  width: 1000px;
+
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: 768px) {
+    justify-content: space-between;
+  }
 `;
 
 const NavLinks = styled.div`
@@ -33,6 +36,8 @@ const NavLinks = styled.div`
     background-color: #333;
     padding: 10px;
     width: 100%;
+    flex-grow: 1;
+    z-index: 100;
   }
 `;
 
@@ -40,8 +45,13 @@ const NavLinkItem = styled(NavLink)`
   text-decoration: none;
   color: white;
   font-weight: bold;
+
   &.active {
     border-bottom: 2px solid white;
+  }
+
+  @media (max-width: 768px) {
+    z-index: 100;
   }
 `;
 
@@ -54,6 +64,7 @@ const Dropdown = styled.div`
 
   @media (max-width: 768px) {
     margin-right: 0;
+    z-index: 1000;
   }
 `;
 
@@ -62,9 +73,13 @@ const DropdownContent = styled.div`
   position: absolute;
   background-color: #333;
   min-width: 160px;
-  z-index: 1;
+  z-index: 100;
   top: 100%;
   left: 0;
+  @media (max-width: 768px) {
+    margin-right: 0;
+    z-index: 1000;
+  }
 `;
 
 const DropdownItem = styled(NavLink)`
@@ -75,15 +90,26 @@ const DropdownItem = styled(NavLink)`
   &:hover {
     background-color: #555;
   }
+  @media (max-width: 768px) {
+    margin-right: 0;
+    z-index: 1000;
+  }
 `;
 
 const LogoImage = styled.img`
-  max-width: 50px; /* Adjust the max-width as needed */
+  max-width: 50vw; /* Adjust the max-width as needed */
+  @media (max-width: 768px) {
+    max-width: 15vw;
+  }
 `;
 
 const HamBarIcon = styled.div`
   display: none;
   cursor: pointer;
+  z-index: ${(props) =>
+    props["data-isopen"]
+      ? "500"
+      : "1"}; /* Set a high z-index when the mobile menu is open */
 
   @media (max-width: 768px) {
     display: block;
@@ -106,10 +132,13 @@ const Navbar = () => {
   return (
     <NavbarWrapper>
       <NavContainer>
-        <HamBarIcon onClick={toggleMobileMenu}>
+        <HamBarIcon onClick={toggleMobileMenu} data-isopen={isMobileMenuOpen}>
           <FontAwesomeIcon icon={faBars} />
         </HamBarIcon>
-        <LogoImage src="images/logo (1).png" alt="Your Logo" />
+        <LogoImage
+          src="https://res.cloudinary.com/dkkuaymml/image/upload/v1716103952/logo_1_cb3pgi.png"
+          alt="Your Logo"
+        />
         <NavLinks data-isopen={isMobileMenuOpen}>
           <NavLinkItem exact="true" to="/home">
             Home
@@ -126,9 +155,9 @@ const Navbar = () => {
           <NavLinkItem to="/in-highlights">In-Highlights</NavLinkItem>
           <NavLinkItem to="/pic">Gallery</NavLinkItem>
           <NavLinkItem to="/media">Media</NavLinkItem>
-          <NavLinkItem to="/contact">Contact</NavLinkItem>
           <NavLinkItem to="/doctor-profile">Doctors-profile</NavLinkItem>
           <NavLinkItem to="/faq">FAQ</NavLinkItem>
+          <NavLinkItem to="/contact">Contact</NavLinkItem>
         </NavLinks>
         <NavLinkItem to="#" className="font-bold">
           ESTD:2021

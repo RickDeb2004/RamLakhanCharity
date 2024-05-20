@@ -7,7 +7,7 @@ import { ref, getDownloadURL, listAll } from "firebase/storage";
 import { storage } from "../firbase";
 
 const BoardOfDirectorsWrapper = styled.div`
-  background-color: #f7f7f7;
+  background: linear-gradient(135deg, #fffdd0, #faf9f6);
 `;
 
 const CardContainer = styled.div`
@@ -24,6 +24,7 @@ const Card = styled.div`
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
+  background: linear-gradient(135deg, #ecd06f, #fff3e0);
 `;
 
 const CardImage = styled.img`

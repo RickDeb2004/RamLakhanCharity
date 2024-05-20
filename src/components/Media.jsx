@@ -8,10 +8,11 @@ import { storage } from "../firbase";
 
 const MediaWrapper = styled.div`
   padding: 20px; /* Adjust the padding as needed */
+  background: linear-gradient(135deg, #FFFDD0, #FAF9F6);
 `;
 
 const HeroSection = styled.section`
-  background-image: url("src/components/images/DSC06815.JPG"); /* Replace with your hero image */
+  background-image: url("images/DSC06815.JPG"); /* Replace with your hero image */
   background-size: cover;
   background-position: center;
   color: white;
@@ -19,9 +20,16 @@ const HeroSection = styled.section`
   padding: 100px 0; /* Adjust the padding as needed */
 `;
 
-const HeroText = styled.div`
-  max-width: 800px;
-  margin: 0 auto;
+const HeroImage = styled.img`
+  max-width: 400px; /* Ensure the image doesn't exceed its container */
+  height: 400px; /* Maintain the aspect ratio */
+  display: block; /* Remove any extra spacing */
+  margin: 0 auto; /* Center the image horizontally */
+
+  @media (max-width: 768px) {
+    max-width: 100px;
+    height: 50px;
+  }
 `;
 
 const MediaContainer = styled.div`
@@ -30,24 +38,29 @@ const MediaContainer = styled.div`
   justify-content: space-between;
   gap: 20px;
   padding: 20px 0; /* Adjust the padding as needed */
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    justify-content: center;
+  }
 `;
 
 const MediaCard = styled.div`
   flex: 1;
-  background-color: #f4f4f4;
+  background: linear-gradient(135deg, #ECD06F, #fff3e0);
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   text-align: center;
+  @media (max-width:768px){
+    flex: 0 0 calc(33.333% - 20px)
+    margin-bottom: 20px;
+  }
 `;
 
 const MediaVideo = styled.video`
   max-width: 100%;
   height: 500px;
-`;
-
-const Description = styled.p`
-  font-weight: bold;
 `;
 
 const Media = () => {
@@ -75,10 +88,7 @@ const Media = () => {
     <MediaWrapper>
       <Navbar />
       <HeroSection>
-        <HeroText>
-          <h1>Media</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </HeroText>
+        <HeroImage  />
       </HeroSection>
 
       <MediaContainer>
@@ -90,8 +100,6 @@ const Media = () => {
               alt={`Project ${index + 1}`}
               loading="lazy"
             />
-
-            <Description>Description 1</Description>
           </MediaCard>
         ))}
       </MediaContainer>

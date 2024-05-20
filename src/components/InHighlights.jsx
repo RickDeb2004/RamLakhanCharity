@@ -6,16 +6,28 @@ import { ref, getDownloadURL, listAll } from "firebase/storage";
 import { storage } from "../firbase";
 
 const InHighlightsWrapper = styled.div`
-  background-color: #f7f7f7;
+  background: linear-gradient(135deg, #fffdd0, #faf9f6);
 `;
 
 const HeroSection = styled.section`
-  background-image: url("src/components/images/DSC06815.JPG"); /* Replace with your hero image path */
+  background-image: url("images/DSC06815.JPG");
   background-size: cover;
   background-position: center;
   color: white;
   text-align: center;
   padding: 100px 0; /* Adjust the padding as needed */
+`;
+
+const HeroImage = styled.img`
+  max-width: 400px; /* Ensure the image doesn't exceed its container */
+  height: 400px; /* Maintain the aspect ratio */
+  display: block; /* Remove any extra spacing */
+  margin: 0 auto; /* Center the image horizontally */
+
+  @media (max-width: 768px) {
+    max-width: 100px;
+    height: 50px;
+  }
 `;
 
 const ProjectCardsContainer = styled.div`
@@ -24,6 +36,13 @@ const ProjectCardsContainer = styled.div`
   gap: 20px; /* Adjust the gap between cards as needed */
   padding: 25px; /* Adjust the padding as needed */
   justify-content: center; /* Center align cards horizontally */
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    justify-content: center
+    flex: 100%
+    
+  }
 `;
 
 const ProjectCard = styled.div`
@@ -33,16 +52,18 @@ const ProjectCard = styled.div`
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
-  /* Additional styling for the project card goes here */
+  background: linear-gradient(135deg, #ECD06F, #fff3e0);
+  @media (max-width:768px){
+    flex-direction: column;
+    justify-content: center
+    flex: 100%;
+  }
 `;
 
 const ProjectCardImage = styled.img`
-  // max-width: 100%;
-  // height: auto;
-  // object-fit:contain;
   max-width: 100%;
   max-height: 200px;
-  //height: auto;
+
   object-fit: contain;
   border-radius: 4px;
 `;
@@ -72,7 +93,9 @@ const InHighlights = () => {
   return (
     <InHighlightsWrapper>
       <Navbar />
-      <HeroSection></HeroSection>
+      <HeroSection>
+        <HeroImage />
+      </HeroSection>
       <ProjectCardsContainer>
         {imageUrls.map((imageUrl, index) => (
           <ProjectCard key={index}>

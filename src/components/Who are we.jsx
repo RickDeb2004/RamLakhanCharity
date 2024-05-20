@@ -8,6 +8,7 @@ const WhoAreWeWrapper = styled.div`
   font-family: "Roboto", sans-serif;
   background-color: #f7f7f7;
   background-image: url("");
+  background: linear-gradient(135deg, #fffdd0, #faf9f6);
 `;
 
 const HeroSection = styled.section`
@@ -28,8 +29,12 @@ const HeroImage = styled.img`
   height: 400px; /* Maintain the aspect ratio */
   display: block; /* Remove any extra spacing */
   margin: 0 auto; /* Center the image horizontally */
-`;
 
+  @media (max-width: 768px) {
+    max-width: 100px;
+    height: 50px;
+  }
+`;
 const ContentSection = styled.section`
   padding: 50px 0; /* Adjust the padding as needed */
   text-align: center;
@@ -55,9 +60,11 @@ const ProjectCard = styled.div`
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
+  background: linear-gradient(135deg, #ECD06F, #fff3e0);
   margin-bottom: 20px;
   @media (max-width: 768px) {
-    padding: 20px;
+    flex:100%;
+    margin-bottom: 20px;
 `;
 
 const ProjectCardHeading = styled.h3`
@@ -81,6 +88,11 @@ const ContentGrid = styled.div`
   display: grid;
   grid-template-columns: 75% 25%;
   gap: 20px;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 const Paragraph = styled.div`
   font-weight: 500;
@@ -131,8 +143,11 @@ const WhoAreWe = () => {
           <ProjectCard style={{ flex: "25%" }}>
             <ProjectCardHeading>Our Values</ProjectCardHeading>
             <ProjectCardContent>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-              tristique urna eu libero fringilla, eget suscipit libero vehicula.
+              At our core, we are driven by integrity, compassion, and
+              inclusivity. We believe in fostering a sense of belonging and
+              empowerment within our community. With a commitment to
+              transparency and ethical practices, we strive to create lasting
+              impact through collaboration and empathy
             </ProjectCardContent>
           </ProjectCard>
         </ContentGrid>

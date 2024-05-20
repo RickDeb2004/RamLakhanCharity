@@ -5,13 +5,15 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import styled from "styled-components";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import MobileHome from "./MobileHome";
 
 const HomeContainer = styled.div`
   font-family: "Roboto", sans-serif;
   display: flex;
   flex-direction: column;
   min-height: 100vh; /* Ensure the container takes at least the full viewport height */
-  background-image: url("");
+
+  background: linear-gradient(135deg, #fffdd0, #faf9f6);
 `;
 
 const HeroSection = styled.section`
@@ -20,7 +22,7 @@ const HeroSection = styled.section`
   justify-content: center;
   align-items: center;
   padding: 10px 0; /* Adjust the padding as needed */
-
+  background: linear-gradient(135deg, #ecd06f, #fff3e0);
   /* Responsive styles for small screens (phones) */
   @media (max-width: 600px) {
     padding: 20px 0;
@@ -29,7 +31,10 @@ const HeroSection = styled.section`
 
 const CarouselContainer = styled.div`
   width: 100%;
-  max-width: 100%; /* Adjust the width as needed */
+  z-index: 0;
+  position: relative;
+  background: linear-gradient(135deg, #ecd06f, #fff3e0);
+  /* Adjust the width as needed */
   margin: 0 auto;
 `;
 
@@ -42,6 +47,7 @@ const CarouselImage = styled.img`
   width: 100%;
   height: auto;
   object-fit: cover; /* Maintain aspect ratio and cover container */
+  background: linear-gradient(135deg, #ecd06f, #fff3e0);
 `;
 
 const CircleCard = styled.div`
@@ -55,8 +61,8 @@ const CircleCard = styled.div`
 `;
 
 const CircleImage = styled.img`
-  width: 150px;
-  height: 150px;
+  width: 10vw;
+  height: 10vw;
   object-fit: cover;
   border-radius: 50%;
   border: 3px solid #333; /* Add a border around the circle */
@@ -75,53 +81,75 @@ const Paragraph = styled.p`
   font-weight: 400;
 `;
 const Home = () => {
+  const isMobileView = window.innerWidth < 600;
+
   return (
     <HomeContainer>
-      <Navbar />
-      <HeroSection>
-        <CarouselContainer>
-          <Carousel
-            infiniteLoop
-            autoPlay
-            showStatus={false}
-            showThumbs={false}
-            interval={3000}
-          >
-            <div>
-              <CarouselImage src="images/DSC06815.JPG" alt="Image 1" />
-            </div>
-            <div>
-              <CarouselImage
-                src="images/C46B9FDC-A2EE-4CF8-9FD5-6D875E8E3034.JPEG"
-                alt="Image 2"
-              />
-            </div>
-            <div>
-              <CarouselImage src="images/IMG_5066.JPG" alt="Image 3" />
-            </div>
-            <div>
-              <CarouselImage src="images/IMG_5058.JPG" alt="Image 4" />
-            </div>
-            <div>
-              <CarouselImage src="images/IMG_5068.JPG" alt="Image 5" />
-            </div>
-          </Carousel>
-        </CarouselContainer>
-      </HeroSection>
+      {isMobileView ? (
+        <MobileHome />
+      ) : (
+        <>
+          <Navbar />
+          <HeroSection>
+            <CarouselContainer>
+              <Carousel
+                infiniteLoop
+                autoPlay
+                showStatus={false}
+                showThumbs={false}
+                interval={3000}
+              >
+                <div>
+                  <CarouselImage
+                    src="https://res.cloudinary.com/dkkuaymml/image/upload/v1715872104/C46B9FDC-A2EE-4CF8-9FD5-6D875E8E3034_awetvo.jpg"
+                    alt="Image 1"
+                  />
+                </div>
+                <div>
+                  <CarouselImage
+                    src="https://res.cloudinary.com/dkkuaymml/image/upload/v1715872456/IMG_5058_nv3e5d.jpg"
+                    alt="Image 2"
+                  />
+                </div>
+                <div>
+                  <CarouselImage
+                    src="https://res.cloudinary.com/dkkuaymml/image/upload/v1716103756/IMG_5066_jzx52z.jpg"
+                    alt="Image 3"
+                  />
+                </div>
+                <div>
+                  <CarouselImage
+                    src="https://res.cloudinary.com/dkkuaymml/image/upload/v1716103861/IMG_5068_ukkr79.jpg"
+                    alt="Image 4"
+                  />
+                </div>
+                <div>
+                  <CarouselImage
+                    src="https://res.cloudinary.com/dkkuaymml/image/upload/v1715872104/C46B9FDC-A2EE-4CF8-9FD5-6D875E8E3034_awetvo.jpg"
+                    alt="Image 5"
+                  />
+                </div>
+              </Carousel>
+            </CarouselContainer>
+          </HeroSection>
 
-      <ContentSection>
-        <Heading2>Welcome to Our Website</Heading2>
-        <Paragraph>
-          Enter a realm of compassionate care, where healthcare transforms lives
-          and nurtures wellbeing.
-        </Paragraph>
-      </ContentSection>
-      <CircleCard>
-        <CircleImage src="images\guruji.jpg" alt="Guru Kripa" />
-        <CircleText>Guru Kripa</CircleText>
-      </CircleCard>
-
-      <Footer />
+          <ContentSection>
+            <Heading2>Welcome to Our Website</Heading2>
+            <Paragraph>
+              Enter a realm of compassionate care, where healthcare transforms
+              lives and nurtures wellbeing.
+            </Paragraph>
+          </ContentSection>
+          <CircleCard>
+            <CircleImage
+              src="https://res.cloudinary.com/dkkuaymml/image/upload/v1716103911/guruji_tyijeq.jpg"
+              alt="Guru Kripa"
+            />
+            <CircleText>Guru Kripa</CircleText>
+          </CircleCard>
+          <Footer />
+        </>
+      )}
     </HomeContainer>
   );
 };

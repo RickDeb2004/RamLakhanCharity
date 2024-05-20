@@ -7,6 +7,7 @@ import { ref, getDownloadURL, listAll } from "firebase/storage";
 import { storage } from "../firbase";
 const DoctorProfileWrapper = styled.div`
   padding: 20px;
+  background: linear-gradient(135deg, #fffdd0, #faf9f6);
 `;
 
 const HeroSection = styled.section`
@@ -16,27 +17,49 @@ const HeroSection = styled.section`
   color: white;
   text-align: center;
   padding: 100px 0;
+  width: 100%;
 `;
 
+const HeroImage = styled.img`
+  max-width: 400px; /* Ensure the image doesn't exceed its container */
+  height: 400px; /* Maintain the aspect ratio */
+  display: block; /* Remove any extra spacing */
+  margin: 0 auto; /* Center the image horizontally */
+
+  @media (max-width: 768px) {
+    max-width: 100px;
+    height: 50px;
+  }
+`;
 const DoctorCardsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 20px;
   padding: 20px 0;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    justify-content: center;
+  }
 `;
 
 const DoctorCard = styled.div`
   flex: 1;
-  background-color: #f4f4f4;
+  background: linear-gradient(135deg, #ECD06F, #fff3e0);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+
+  @media (max-width:768px){
+    flex: 0 0 calc(33.333% - 20px)
+    margin-bottom: 20px;
+  }
 `;
 
 const DoctorImage = styled.img`
-  width: 300px;
+  width: 100%;
   height: 300px;
   object-fit: cover;
   border-radius: 10px;
@@ -103,7 +126,9 @@ const DoctorProfile = () => {
   return (
     <DoctorProfileWrapper>
       <Navbar />
-      <HeroSection></HeroSection>
+      <HeroSection>
+        <HeroImage />
+      </HeroSection>
 
       <DoctorCardsContainer>
         {doctorsData.map((doctor) => (
