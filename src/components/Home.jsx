@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from "react";
 import { Carousel } from "react-responsive-carousel";
@@ -12,7 +13,6 @@ const HomeContainer = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh; /* Ensure the container takes at least the full viewport height */
-
   background: linear-gradient(135deg, #fffdd0, #faf9f6);
 `;
 
@@ -53,9 +53,13 @@ const CarouselImage = styled.img`
 const CircleCard = styled.div`
   text-align: center;
   margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 
   /* Responsive styles for small screens (phones) */
   @media (max-width: 600px) {
+    flex-direction: column;
     margin-top: 10px;
   }
 `;
@@ -69,17 +73,88 @@ const CircleImage = styled.img`
   margin: 0 auto;
 `;
 
-const CircleText = styled.p`
-  font-weight: 400;
-  font-size: 24px;
-  margin-top: 20px;
-`;
 const Heading2 = styled.h2`
   font-weight: 600;
 `;
+
 const Paragraph = styled.p`
   font-weight: 400;
 `;
+
+const VisionCard = styled.div`
+  flex: 50%; /* 50% of the row */
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  background: linear-gradient(135deg, #ecd06f, #fff3e0);
+  margin-left: 20px;
+
+  @media (max-width: 768px) {
+    flex: 100%;
+    margin-top: 20px;
+  }
+`;
+
+const VisionHeading = styled.h3`
+  font-weight: 600;
+  margin-bottom: 10px;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+`;
+
+const VisionContent = styled.p`
+  font-weight: 400;
+  text-align: left;
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
+`;
+
+const AdditionalContent = styled.div`
+  margin-top: 20px;
+  text-align: left;
+`;
+
+const AdditionalContentBottom = styled.div`
+  margin-top: 50px;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+`;
+
+const ContactCard = styled.div`
+  flex: 30%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  background: linear-gradient(135deg, #ecd06f, #fff3e0);
+  margin-left: 20px;
+  height: 250px;
+`;
+
+const ContactHeading = styled.h3`
+  font-weight: 600;
+  margin-bottom: 10px;
+`;
+
+const ContactContent = styled.p`
+  font-weight: 400;
+`;
+
 const Home = () => {
   const isMobileView = window.innerWidth < 600;
 
@@ -140,13 +215,166 @@ const Home = () => {
               lives and nurtures wellbeing.
             </Paragraph>
           </ContentSection>
+
           <CircleCard>
             <CircleImage
               src="https://res.cloudinary.com/dkkuaymml/image/upload/v1716103911/guruji_tyijeq.jpg"
               alt="Guru Kripa"
             />
-            <CircleText>Guru Kripa</CircleText>
           </CircleCard>
+
+          <CircleCard>
+            <div style={{ flex: 50, padding: "20px" }}>
+              <h3>
+                Welcome to Maya CARE Foundation – The next best thing to family.
+              </h3>
+              <p>
+                Maya CARE Foundation, a charitable organization founded in 2009,
+                dedicated to empowering the most marginalized sections of
+                society – Persons with Disabilities (PWDs) and the elderly. Our
+                unique approach revolves around empowering one section to help
+                the other, fostering a sense of community and support.
+              </p>
+              <p>
+                Our journey began 13 years ago with a mission to provide free
+                assistance to the elderly, and this initiative is entirely
+                managed by professionals who have triumphed over disabilities.
+                Through the dedication of our passionate team, we have offered
+                20,872 free visits, providing essential medical, emotional, and
+                logistical support to the elderly across 4 cities in the UK and
+                72 cities in India.
+              </p>
+              <p>
+                At Maya CARE Foundation, we take immense pride in our commitment
+                to nurturing leaders who have overcome various disabilities. Our
+                organization has played a pivotal role in assisting over a
+                thousand disabled individuals in finding career direction and
+                achieving personal growth.
+              </p>
+              <p>
+                As we continue our impactful journey, we aim to extend our reach
+                further and create a profound positive impact on the lives of
+                those in need. Join us in making a difference and building a
+                more inclusive and compassionate society for all.
+              </p>
+            </div>
+            <VisionCard>
+              <VisionHeading>VISION</VisionHeading>
+              <VisionContent>
+                Trust with the goal of social, charitable, and philanthropic
+                activities.
+              </VisionContent>
+              <AdditionalContent>
+                <p>
+                  Maya CARE Foundation, where we embrace challenges and turn
+                  them into opportunities to serve the elderly with the help of
+                  our unique team, Project BINDU, comprising Persons with
+                  Disabilities (PwDs). Together, we have three complementary
+                  teams, each with varying abilities, making a meaningful
+                  difference:
+                </p>
+                <ul>
+                  <li>
+                    The Voice Team: Our visually impaired professionals
+                    skillfully connect with and assist those in need through
+                    voice notes during calls.
+                  </li>
+                  <li>
+                    The Data Team: Our hearing-impaired members effectively
+                    communicate through "silent" chat with subtitles, ensuring
+                    seamless interactions.
+                  </li>
+                  <li>
+                    The Power Team: Led by individuals with locomotor or neuro
+                    disabilities, they spearhead our efforts and drive positive
+                    change.
+                  </li>
+                </ul>
+                <p>
+                  Empowering PwDs facing socio-economic challenges, we harness
+                  technology to offer remote, flexible opportunities with a "pay
+                  per hour" approach through data-driven strategies. Thanks to
+                  Salesforce, our operations run efficiently, providing
+                  personalized services across 72 Indian cities.
+                </p>
+                <p>
+                  Accessibility is vital to us, so we equip our team with
+                  laptops, routers, and smartphones, enabling seamless
+                  communication through platforms like WhatsApp and Google
+                  Drive.
+                </p>
+                <p>
+                  Maya CARE Foundation is dedicated to celebrating diversity and
+                  empowering every individual to make a meaningful impact. Join
+                  our journey of compassion and inclusivity as we work together
+                  to empower lives and foster a strong sense of community and
+                  support. Together, we can create a more inclusive society that
+                  values and embraces the strengths of each person.
+                </p>
+              </AdditionalContent>
+            </VisionCard>
+          </CircleCard>
+
+          <AdditionalContentBottom>
+            <div style={{ flex: 70 }}>
+              <p>
+                How Maya CARE Foundation Works: Empowering Lives with Diversity
+                Maya CARE Foundation, where we embrace challenges and turn them
+                into opportunities to serve the elderly with the help of our
+                unique team, Project BINDU, comprising Persons with Disabilities
+                (PwDs). Together, we have three complementary teams, each with
+                varying abilities, making a meaningful difference:
+              </p>
+              <ul>
+                <li>
+                  The Voice Team: Our visually impaired professionals skillfully
+                  connect with and assist those in need through voice notes
+                  during calls.
+                </li>
+                <li>
+                  The Data Team: Our hearing-impaired members effectively
+                  communicate through "silent" chat with subtitles, ensuring
+                  seamless interactions.
+                </li>
+                <li>
+                  The Power Team: Led by individuals with locomotor or neuro
+                  disabilities, they spearhead our efforts and drive positive
+                  change.
+                </li>
+              </ul>
+              <p>
+                Empowering PwDs facing socio-economic challenges, we harness
+                technology to offer remote, flexible opportunities with a "pay
+                per hour" approach through data-driven strategies. Thanks to
+                Salesforce, our operations run efficiently, providing
+                personalized services across 72 Indian cities.
+              </p>
+              <p>
+                Accessibility is vital to us, so we equip our team with laptops,
+                routers, and smartphones, enabling seamless communication
+                through platforms like WhatsApp and Google Drive.
+              </p>
+              <p>
+                Maya CARE Foundation is dedicated to celebrating diversity and
+                empowering every individual to make a meaningful impact. Join
+                our journey of compassion and inclusivity as we work together to
+                empower lives and foster a strong sense of community and
+                support. Together, we can create a more inclusive society that
+                values and embraces the strengths of each person.
+              </p>
+            </div>
+            <ContactCard>
+              <ContactHeading>Contact Us</ContactHeading>
+              <ContactContent>
+                For more information, reach out to us at:
+                <br />
+                Email: contact@mayacare.org
+                <br />
+                Phone: +91 12345 67890
+              </ContactContent>
+            </ContactCard>
+          </AdditionalContentBottom>
+
           <Footer />
         </>
       )}
