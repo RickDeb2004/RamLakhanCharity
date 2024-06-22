@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 // eslint-disable-next-line no-unused-vars
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import styled from "styled-components";
@@ -81,46 +81,6 @@ const Paragraph = styled.p`
   font-weight: 400;
 `;
 
-const VisionCard = styled.div`
-  flex: 50%; /* 50% of the row */
-  background-color: #fff;
-  border: 1px solid #ccc;
-  padding: 20px;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  background: linear-gradient(135deg, #ecd06f, #fff3e0);
-  margin-left: 20px;
-
-  @media (max-width: 768px) {
-    flex: 100%;
-    margin-top: 20px;
-  }
-`;
-
-const VisionHeading = styled.h3`
-  font-weight: 600;
-  margin-bottom: 10px;
-
-  @media (max-width: 768px) {
-    font-size: 1.5rem;
-  }
-`;
-
-const VisionContent = styled.p`
-  font-weight: 400;
-  text-align: left;
-
-  @media (max-width: 768px) {
-    font-size: 1.2rem;
-  }
-`;
-
-const AdditionalContent = styled.div`
-  margin-top: 20px;
-  text-align: left;
-`;
-
 const AdditionalContentBottom = styled.div`
   margin-top: 50px;
   text-align: left;
@@ -133,7 +93,7 @@ const AdditionalContentBottom = styled.div`
   }
 `;
 
-const ContactCard = styled.div`
+const InfoCard = styled.div`
   flex: 30%;
   background-color: #fff;
   border: 1px solid #ccc;
@@ -141,9 +101,8 @@ const ContactCard = styled.div`
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
-  background: linear-gradient(135deg, #ecd06f, #fff3e0);
+  background: linear-gradient(135deg, #6a1b9a, #fff3e0);
   margin-left: 20px;
-  height: 250px;
 `;
 
 const ContactHeading = styled.h3`
@@ -153,6 +112,18 @@ const ContactHeading = styled.h3`
 
 const ContactContent = styled.p`
   font-weight: 400;
+`;
+
+const VideoCard = styled.div`
+  flex: 30%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  background: linear-gradient(135deg, #ecd06f, #fff3e0);
+  margin-left: 20px;
 `;
 
 const Home = () => {
@@ -223,8 +194,8 @@ const Home = () => {
             />
           </CircleCard>
 
-          <CircleCard>
-            <div style={{ flex: 50, padding: "20px" }}>
+          <AdditionalContentBottom>
+            <div style={{ flex: 70 }}>
               <h3>
                 Welcome to Maya CARE Foundation – The next best thing to family.
               </h3>
@@ -257,68 +228,12 @@ const Home = () => {
                 those in need. Join us in making a difference and building a
                 more inclusive and compassionate society for all.
               </p>
-            </div>
-            <VisionCard>
-              <VisionHeading>VISION</VisionHeading>
-              <VisionContent>
-                Trust with the goal of social, charitable, and philanthropic
-                activities.
-              </VisionContent>
-              <AdditionalContent>
-                <p>
-                  Maya CARE Foundation, where we embrace challenges and turn
-                  them into opportunities to serve the elderly with the help of
-                  our unique team, Project BINDU, comprising Persons with
-                  Disabilities (PwDs). Together, we have three complementary
-                  teams, each with varying abilities, making a meaningful
-                  difference:
-                </p>
-                <ul>
-                  <li>
-                    The Voice Team: Our visually impaired professionals
-                    skillfully connect with and assist those in need through
-                    voice notes during calls.
-                  </li>
-                  <li>
-                    The Data Team: Our hearing-impaired members effectively
-                    communicate through "silent" chat with subtitles, ensuring
-                    seamless interactions.
-                  </li>
-                  <li>
-                    The Power Team: Led by individuals with locomotor or neuro
-                    disabilities, they spearhead our efforts and drive positive
-                    change.
-                  </li>
-                </ul>
-                <p>
-                  Empowering PwDs facing socio-economic challenges, we harness
-                  technology to offer remote, flexible opportunities with a "pay
-                  per hour" approach through data-driven strategies. Thanks to
-                  Salesforce, our operations run efficiently, providing
-                  personalized services across 72 Indian cities.
-                </p>
-                <p>
-                  Accessibility is vital to us, so we equip our team with
-                  laptops, routers, and smartphones, enabling seamless
-                  communication through platforms like WhatsApp and Google
-                  Drive.
-                </p>
-                <p>
-                  Maya CARE Foundation is dedicated to celebrating diversity and
-                  empowering every individual to make a meaningful impact. Join
-                  our journey of compassion and inclusivity as we work together
-                  to empower lives and foster a strong sense of community and
-                  support. Together, we can create a more inclusive society that
-                  values and embraces the strengths of each person.
-                </p>
-              </AdditionalContent>
-            </VisionCard>
-          </CircleCard>
+              <p>Maya CARE services are offered FREE of charge.</p>
 
-          <AdditionalContentBottom>
-            <div style={{ flex: 70 }}>
-              <p>
+              <h3>
                 How Maya CARE Foundation Works: Empowering Lives with Diversity
+              </h3>
+              <p>
                 Maya CARE Foundation, where we embrace challenges and turn them
                 into opportunities to serve the elderly with the help of our
                 unique team, Project BINDU, comprising Persons with Disabilities
@@ -363,16 +278,34 @@ const Home = () => {
                 values and embraces the strengths of each person.
               </p>
             </div>
-            <ContactCard>
-              <ContactHeading>Contact Us</ContactHeading>
-              <ContactContent>
-                For more information, reach out to us at:
-                <br />
-                Email: contact@mayacare.org
-                <br />
-                Phone: +91 12345 67890
-              </ContactContent>
-            </ContactCard>
+            <div style={{ flex: 30, display: "flex", flexDirection: "column" }}>
+              <InfoCard>
+                <ContactHeading>Serving the elderly</ContactHeading>
+                <ContactContent>
+                  Free services to the elderly in every city of India and to the
+                  world with operations managed by PWDs in every spoken language
+                  of the world.
+                </ContactContent>
+              </InfoCard>
+              <InfoCard style={{ marginTop: "20px" }}>
+                <ContactHeading>Project Bindu</ContactHeading>
+                <ContactContent>
+                  Enable PWDs to become economically independent while leading a
+                  professional organisation.
+                </ContactContent>
+              </InfoCard>
+              <VideoCard style={{ marginTop: "20px" }}>
+                <iframe
+                  width="100%"
+                  height="200"
+                  src="https://www.youtube.com/embed/your-video-id"
+                  title="YouTube video"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </VideoCard>
+            </div>
           </AdditionalContentBottom>
 
           <Footer />

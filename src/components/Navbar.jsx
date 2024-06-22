@@ -8,16 +8,31 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 const NavbarWrapper = styled.nav`
   background-color: #333;
   color: white;
-  padding: 10px 20px;
+`;
+
+const TopBar = styled.div`
+  background-color: #6a1b9a;
+  color: white;
+  text-align: center;
+  padding: 5px 0;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: center;
+  gap: 10px; /* Add gap between elements */
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const NavContainer = styled.div`
-  width: 100%;
-
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 10px 20px;
+  margin-top: 10px; /* Add margin top for spacing */
+
   @media (max-width: 768px) {
     justify-content: space-between;
   }
@@ -76,6 +91,7 @@ const DropdownContent = styled.div`
   z-index: 100;
   top: 100%;
   left: 0;
+
   @media (max-width: 768px) {
     margin-right: 0;
     z-index: 1000;
@@ -87,9 +103,11 @@ const DropdownItem = styled(NavLink)`
   padding: 10px;
   text-decoration: none;
   color: white;
+
   &:hover {
     background-color: #555;
   }
+
   @media (max-width: 768px) {
     margin-right: 0;
     z-index: 1000;
@@ -98,6 +116,7 @@ const DropdownItem = styled(NavLink)`
 
 const LogoImage = styled.img`
   max-width: 50vw; /* Adjust the max-width as needed */
+
   @media (max-width: 768px) {
     max-width: 15vw;
   }
@@ -131,6 +150,11 @@ const Navbar = () => {
 
   return (
     <NavbarWrapper>
+      <TopBar>
+        <span>Toll Free No. 1800 572 1343</span>
+        <span>|</span>
+        <span>service@mayacare.org</span>
+      </TopBar>
       <NavContainer>
         <HamBarIcon onClick={toggleMobileMenu} data-isopen={isMobileMenuOpen}>
           <FontAwesomeIcon icon={faBars} />
